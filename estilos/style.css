@@ -61,11 +61,11 @@ h1::after {
 
 h2 {
   font-family: "Helvetica", sans-serif;
-  font-size: 3rem;
+  font-size: 3.2rem;
   color: #555;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 h3.todosOFiltra {
@@ -394,7 +394,7 @@ select.opciones {
 /* Estilo para los botones de selección */
 #seleccionador_tragos button {
   font-family: "Helvetica", sans-serif;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   color: #fff;
   background-color: #ff9800; /* Color principal de la fiesta */
   border: 2px solid #fff;
@@ -404,34 +404,28 @@ select.opciones {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   margin-left: auto;
   margin-right: auto;
-  width: 25rem; /* Ancho del botón */
+  width: 25.5rem; /* Ancho del botón */
   height: 6.5rem; /* Alto del botón */
-  margin-top: 1rem;
+  border-color: #fff;
 }
 
 #seleccionador_tragos button.fiesta2 {
   background-color: #0067ff; /* Color de discoteca */
-  color: #fff;
-  border-color: #fff;
+ 
 }
 
 #seleccionador_tragos button.fiesta3 {
   background-color: #00bcd4; /* Color de discoteca */
-  color: #fff;
-  border-color: #fff;
 }
 
 /* Estilo para los botones de selección en modo discoteca */
 #seleccionador_tragos button.discoteca {
   background-color: #673ab7; /* Color de discoteca */
-  color: #fff;
-  border-color: #fff;
 }
 
 /* Estilo para los botones de selección en modo happyHour */
 #seleccionador_tragos button.happyHour {
   background-color: #00bf00; /* Color verde llamativo */
-  color: #fff;
   font-family: "Noto Serif Makasar", serif;
   font-size: 2.5rem; /* Tamaño de fuente reducido */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
@@ -446,8 +440,6 @@ select.opciones {
 
 #seleccionador_tragos button.tutorial {
   background-color: #8e8e8e; /* Color de discoteca */
-  color: #fff;
-  border-color: #fff;
   width: 25rem; /* Ancho del botón */
   height: 5.5rem; /* Alto del botón */
   border-radius: 2rem; /* Mayor valor para que parezcan globos */
