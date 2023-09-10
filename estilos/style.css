@@ -1,0 +1,567 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Makasar&display=swap");
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  padding: 1rem;
+  background-image: url(../assets/logoAlabado.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 90%;
+}
+
+#logo {
+  width: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+#animation-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin 5s ease-in-out;
+  opacity: 1;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) scale(3.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3, 0);
+    opacity: 0;
+  }
+}
+
+h1 {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 3.3rem;
+  color: #333;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 6.25rem;
+  height: 0.1875rem;
+  background-color: #333;
+  margin: 0.625rem auto;
+}
+
+h2 {
+  font-family: "Helvetica", sans-serif;
+  font-size: 2.5rem;
+  color: #555;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h3.todosOFiltra {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+
+.columna {
+  text-align: center;
+}
+
+.input-wrapper {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.input-wrapper input {
+  width: 23rem;
+  padding: 0.625rem;
+  border: 0.0625rem solid black;
+  border-radius: 0.25rem;
+  font-size: 3rem;
+  margin-right: 0.625rem;
+  text-align: center;
+}
+
+.input-wrapper input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.opcion {
+  width: 49%; /* Ancho del recuadro, puedes ajustar este valor */
+  display: inline-block; /* Mostrar los recuadros en línea */
+  vertical-align: top; /* Alinear los recuadros en la parte superior */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  box-sizing: border-box;
+  border: 0.125rem solid #ccc;
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  margin-top: 1rem;
+}
+
+.opciones-categoria {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imagen {
+  margin: auto;
+  box-shadow: 0 0.125rem 1.25rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  margin-top: 1.5rem;
+  width: 90%;
+}
+
+.imagen img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.imagen:hover img {
+  transform: scale(1.01);
+}
+
+.seleccion input[type="checkbox"] {
+  display: none;
+}
+
+.seleccion label {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 0.3125rem;
+  margin-top: 0.5rem;
+}
+
+.eliminar-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3125rem;
+  background-color: red;
+  color: white;
+  border: none;
+  flex-wrap: wrap;
+}
+
+/* Estilo original del botón */
+.label-boton {
+  display: inline-block;
+  padding: 0.3125rem 0.625rem;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 1;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+/* Estilo para el modo "Borrar Pedido" */
+.label-boton.boton-borrar {
+  background-color: red;
+}
+
+.desplegable select {
+  width: 25rem;
+  height: 3.5rem;
+  font-size: 2.5rem;
+  border-radius: 0.25rem;
+  border: 0.06rem solid #ccc;
+  padding: 0.3rem;
+  text-align: center;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.entrada-info {
+  justify-content: start;
+}
+
+.entrada-label {
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: "Noto Serif Makasar", serif;
+  margin-bottom: 1rem;
+}
+
+.colorSlogan {
+  color: rgb(250, 171, 2);
+  font-size: 2rem;
+}
+
+.formatoDescripcion {
+  font-weight: lighter;
+  font-style: italic;
+ 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.precioBox {
+  font-size: 2.5rem;
+}
+
+.cantidadInfo {
+  font-size: 2.5rem;
+}
+
+.estiloCantidad {
+  width: 5.5rem;
+  font-size: 3.5rem;
+  height: 4rem;
+  text-align: center;
+  border: solid 0.2rem black;
+}
+
+#tu_orden {
+  font-size: 3.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 2rem;
+}
+
+#orden_lista {
+  width: 87%; /* Ancho del recuadro, puedes ajustar este valor */
+  display: flex; /* Mostrar los recuadros en línea */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias filas */
+  justify-content: space-between; /* Distribuir los elementos de manera equitativa en la línea */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+}
+
+.categoria-comun {
+  text-align: left;
+  width: calc(100% - 5rem); /* Ancho del elemento, incluyendo margen */
+  margin-bottom: 1rem;
+}
+
+.categoria-comun::after {
+  content: "";
+  display: block;
+  width: 50rem;
+  height: 0.1875rem;
+  background-color: #333;
+  margin: 0.625rem auto;
+  margin-top: 2rem;
+}
+
+.nombre {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.cantidadDescripcion,
+.precioDescripcion,
+.precioTotalDescripcion {
+  font-size: 3rem;
+  font-style: italic;
+}
+
+#precio_final {
+  font-family: "Helvetica", sans-serif;
+  font-size: 3rem;
+}
+
+#boton_pedido {
+  display: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #337ab7;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toastify {
+  font-size: 2.2rem;
+  text-align: justify;
+}
+
+.cartelConfirmaPedido .swal2-popup {
+  font-size: 2.5rem; /* Tamaño de fuente más grande */
+  width: 50rem; /* Ancho del recuadro más grande */
+}
+
+#btnComentarios.mostrar {
+  display: block; /* Mostrar el botón cuando se activa la clase "mostrar" */
+}
+
+#desplegable_comentarios {
+  margin-top: 0.7rem;
+}
+
+#campo_comentarios {
+  width: 95%;
+  height: 100px;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn_enviar,
+#btn_cerrar {
+  background-color: #f44336;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin: 0.2rem;
+}
+
+#btn_enviar {
+  background-color: #337ab7;
+}
+
+select.opciones {
+  font-family: "Arial", sans-serif;
+  font-size: 3rem;
+  color: #555;
+  padding: 0.5rem;
+  border: 0.0625rem solid black;
+  border-radius: 0.25rem;
+  width: 45rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.opciones option.disabled {
+  color: #999;
+}
+
+.opciones option.subcategorias {
+  padding-left: 10px;
+  color: #888;
+  font-style: italic;
+  font-size: 3.5rem;
+}
+
+.opciones option {
+  font-size: 2rem;
+}
+
+.recordaTexto {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+/* Estilo para el contenedor de los botones */
+#seleccionador_tragos {
+  display: flex;
+  flex-direction: row; /* Muestra los botones uno debajo del otro */
+  align-items: center; /* Centra los botones horizontalmente */
+}
+
+/* Estilo para los botones de selección */
+#seleccionador_tragos button {
+  font-family: "Helvetica", sans-serif;
+  font-size: 2.3rem;
+  color: #fff;
+  background-color: #ff9800; /* Color principal de la fiesta */
+  border: 2px solid #fff;
+  border-radius: 2rem; /* Mayor valor para que parezcan globos */
+  padding: 2rem 3rem; /* Mayor padding para más espacio */
+  margin: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  margin-left: auto;
+  margin-right: auto;
+  width: 25rem; /* Ancho del botón */
+  height: 6.5rem; /* Alto del botón */
+}
+
+#seleccionador_tragos button.fiesta2 {
+  background-color: #0067ff; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+}
+
+#seleccionador_tragos button.fiesta3 {
+  background-color: #00bcd4; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Estilo para los botones de selección en modo discoteca */
+#seleccionador_tragos button.discoteca {
+  background-color: #673ab7; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Estilo para los botones de selección en modo happyHour */
+#seleccionador_tragos button.happyHour {
+  background-color: #00bf00; /* Color verde llamativo */
+  color: #fff;
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 2.5rem; /* Tamaño de fuente reducido */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+  width: 18rem; /* Ancho del botón */
+  height: 18rem; /* Alto del botón */
+  line-height: 1.2;
+  border-radius: 400rem; /* Mayor valor para que parezcan globos */
+  font-weight: 600;
+  align-items: center; /* Centra los botones horizontalmente */
+  margin-top: 13rem;
+}
+
+#seleccionador_tragos button.tutorial {
+  background-color: #8e8e8e; /* Color de discoteca */
+  color: #fff;
+  border-color: #fff;
+  width: 25rem; /* Ancho del botón */
+  height: 5.5rem; /* Alto del botón */
+  border-radius: 2rem; /* Mayor valor para que parezcan globos */
+  margin-top: 60rem;
+  display: flex;
+  font-weight: 500;
+}
+
+.resize-textTutorial {
+  font-size: 2.5rem;
+  margin-left: 3.5rem;
+  margin-top: -0.7rem;
+}
+
+.resize-text {
+  font-size: 3rem; /* Tamaño de fuente de 2x1 */
+}
+
+/* Estilo para el nuevo h2 (título de promoción) */
+.titulo-promocion {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
+  color: #fff;
+  background-color: #ff9800;
+  padding: 1rem 2rem; /* Mayor padding para más presencia */
+  border-radius: 2rem;
+  margin: 2rem auto; /* Mayor margen para centrar mejor */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 70%; /* Mayor ancho para más destaque */
+}
+
+/* Estilo para el nuevo h2 (título de promoción) en modo discoteca */
+.titulo-promocion1 {
+  font-family: "Noto Serif Makasar", serif;
+  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
+  background-color: #673ab7; /* Color de discoteca */
+  color: #fff;
+  padding: 1rem 2rem; /* Mayor padding para más presencia */
+  border-radius: 2rem;
+  margin: 2rem auto; /* Mayor margen para centrar mejor */
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  width: 70%; /* Mayor ancho para más destaque */
+}
+
+#btnComentarios {
+  display: none; /* Ocultar el botón inicialmente */
+  background-color: #ff9800; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  font-size: 2.2rem; /* Tamaño de fuente del botón */
+  border: 2px solid #fff;
+  border-radius: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+}
+
+#boton_pedido {
+  font-family: "Helvetica", sans-serif;
+  display: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  font-size: 2rem;
+  font-weight: bold;
+  color: white; /* Color del texto del botón */
+  background-color: #337ab7;
+  border-radius: 0.7rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+}
+
+/* Estilo para el botón "Home" */
+#homeButton {
+  font-weight: bold;
+  font-family: "Helvetica", sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  background-color: red; /* Color de discoteca */
+  border: 2px solid #fff;
+  border-radius: 0.7rem; /* Mayor valor para que parezcan globos */
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.promocion-text {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.6rem;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 93%;
+  margin-top: 5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.4rem;
+}
