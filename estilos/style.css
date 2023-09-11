@@ -21,7 +21,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 125%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -29,16 +29,17 @@ body {
   animation: spin 5s ease-in-out;
   opacity: 1;
   z-index: 9999;
+  pointer-events: none;
 }
 
 @keyframes spin {
   0% {
-    transform: translate(-50%, -50%) scale(3.8);
+    transform: translate(-50%, -50%) scale(3);
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) scale(3, 0);
-    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
   }
 }
 
@@ -59,6 +60,12 @@ h1::after {
   margin: 0.625rem auto;
 }
 
+.mi-clase-h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 4.5rem;
+}
+
 h2 {
   font-family: "Helvetica", sans-serif;
   font-size: 3.2rem;
@@ -66,6 +73,10 @@ h2 {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mi-clase-h2 {
+  margin-bottom: -5rem;
 }
 
 h3.todosOFiltra {
@@ -212,7 +223,6 @@ h3.todosOFiltra {
 .formatoDescripcion {
   font-weight: lighter;
   font-style: italic;
- 
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -288,20 +298,38 @@ h3.todosOFiltra {
 
 #boton_pedido {
   display: none;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 2.5rem;
+  margin: 2rem auto 1rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
   background-color: #337ab7;
-  border: none;
-  border-radius: 0.5rem;
+  border: 2px solid #fff;
+  border-radius: 0.7rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: auto;
-  margin-right: auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Helvetica", sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+}
+
+#boton_mozo {
+  display: none;
+  margin: 2rem auto 1rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #337ab7;
+  border: 2px solid #fff;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Helvetica", sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: fit-content;
 }
 
 .toastify {
@@ -392,98 +420,30 @@ select.opciones {
 }
 
 /* Estilo para los botones de selección */
-#seleccionador_tragos button {
+#opcionesBotones button {
   font-family: "Helvetica", sans-serif;
+  font-weight: bold;
   font-size: 2.5rem;
   color: #fff;
   background-color: #ff9800; /* Color principal de la fiesta */
-  border: 2px solid #fff;
-  border-radius: 2rem; /* Mayor valor para que parezcan globos */
+  border: 4px solid #fff;
+  border-radius: 4rem; /* Mayor valor para que parezcan globos */
   padding: 2rem 3rem; /* Mayor padding para más espacio */
   margin: 1rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   margin-left: auto;
   margin-right: auto;
-  width: 25.5rem; /* Ancho del botón */
-  height: 6.5rem; /* Alto del botón */
+  width: 16rem; /* Ancho del botón */
+  height: 13rem; /* Alto del botón */
   border-color: #fff;
 }
 
-#seleccionador_tragos button.fiesta2 {
+#opcionesBotones button.llamarAlMozo {
+  background-color: #673ab7; /* Color de discoteca */
+}
+
+#opcionesBotones button.pedirLaCuenta {
   background-color: #0067ff; /* Color de discoteca */
- 
-}
-
-#seleccionador_tragos button.fiesta3 {
-  background-color: #00bcd4; /* Color de discoteca */
-}
-
-/* Estilo para los botones de selección en modo discoteca */
-#seleccionador_tragos button.discoteca {
-  background-color: #673ab7; /* Color de discoteca */
-}
-
-/* Estilo para los botones de selección en modo happyHour */
-#seleccionador_tragos button.happyHour {
-  background-color: #00bf00; /* Color verde llamativo */
-  font-family: "Noto Serif Makasar", serif;
-  font-size: 2.5rem; /* Tamaño de fuente reducido */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
-  width: 18rem; /* Ancho del botón */
-  height: 18rem; /* Alto del botón */
-  line-height: 1.2;
-  border-radius: 400rem; /* Mayor valor para que parezcan globos */
-  font-weight: 600;
-  align-items: center; /* Centra los botones horizontalmente */
-  margin-top: 13rem;
-}
-
-#seleccionador_tragos button.tutorial {
-  background-color: #8e8e8e; /* Color de discoteca */
-  width: 25rem; /* Ancho del botón */
-  height: 5.5rem; /* Alto del botón */
-  border-radius: 2rem; /* Mayor valor para que parezcan globos */
-  margin-top: 60rem;
-  display: flex;
-  font-weight: 500;
-}
-
-.resize-textTutorial {
-  font-size: 2.5rem;
-  margin-left: 3.5rem;
-  margin-top: -0.7rem;
-}
-
-.resize-text {
-  font-size: 3rem; /* Tamaño de fuente de 2x1 */
-}
-
-/* Estilo para el nuevo h2 (título de promoción) */
-.titulo-promocion {
-  font-family: "Noto Serif Makasar", serif;
-  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
-  color: #fff;
-  background-color: #ff9800;
-  padding: 1rem 2rem; /* Mayor padding para más presencia */
-  border-radius: 2rem;
-  margin: 2rem auto; /* Mayor margen para centrar mejor */
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  width: 70%; /* Mayor ancho para más destaque */
-}
-
-/* Estilo para el nuevo h2 (título de promoción) en modo discoteca */
-.titulo-promocion1 {
-  font-family: "Noto Serif Makasar", serif;
-  font-size: 3.5rem; /* Tamaño más grande para mayor impacto */
-  background-color: #673ab7; /* Color de discoteca */
-  color: #fff;
-  padding: 1rem 2rem; /* Mayor padding para más presencia */
-  border-radius: 2rem;
-  margin: 2rem auto; /* Mayor margen para centrar mejor */
-  text-align: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  width: 70%; /* Mayor ancho para más destaque */
 }
 
 #btnComentarios {
@@ -502,20 +462,17 @@ select.opciones {
   width: fit-content; /* Hacer que el ancho se ajuste al contenido */
 }
 
-#boton_pedido {
-  font-family: "Helvetica", sans-serif;
-  display: none;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
-  font-size: 2rem;
-  font-weight: bold;
+#btnComentariosMozo {
+  background-color: #ff9800; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
-  background-color: #337ab7;
+  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
+  font-size: 2.2rem; /* Tamaño de fuente del botón */
+  border: 2px solid #fff;
   border-radius: 0.7rem;
   margin-left: auto;
   margin-right: auto;
-  border: 2px solid #fff;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   width: fit-content; /* Hacer que el ancho se ajuste al contenido */
 }
@@ -536,11 +493,6 @@ select.opciones {
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 5rem;
-}
-
-.promocion-text {
-  font-size: 1.75rem;
-  text-align: center;
 }
 
 footer {

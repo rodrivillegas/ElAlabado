@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-    <link rel="shortcut icon" href="./assets/NonoPrimoAnimación.png" />
+    <link rel="shortcut icon" href="./assets/AlabadoFavicon.webp" />
     <link rel="stylesheet" type="text/css" href="./estilos/style.css" />
     <link
       rel="stylesheet"
@@ -15,61 +15,25 @@
   </head>
   <body>
     <div id="animation-container">
-      <img id="logo" src="assets/fire-65.gif" alt="Logo" />
+      <img id="logo" src="assets/fuegoAnim.gif" alt="Logo" />
     </div>
-    <div id="seleccionador_tragos" style="text-align: center">
+    <div id="opcionesBotones" style="text-align: center">
       <h1>
         "EL ALABADO" <br />
         Cocina con fuegos
       </h1>
       <div class="categoria" style="text-align: center">
-        <h2 class="fiesta">Realiza tu pedido On-line 📝</h2>
+        <h2>Gestioná On-line tu visita</h2>
       </div>
 
-      <button class="fiesta" onclick="mostrarTragos('LaMignon')">
-        CAFETERIA
+      <button class="haceTuOrden" onclick="mostrarOpciones('haceTuOrden')">
+        HACÉ TU ORDEN
       </button>
-      <button class="fiesta2" onclick="mostrarTragos('Aperol')">
-        BEBIDAS
+      <button class="llamarAlMozo" onclick="mostrarOpciones('llamarAlMozo')">
+        LLAMÁ AL MOZO
       </button>
-      <button class="fiesta3" onclick="mostrarTragos('FernetBotella')">
-        COMIDA
-      </button>
-      <button class="discoteca" onclick="mostrarTragos('TragosDeAutor')">
-        POSTRES
-      </button>
-      <!-- <button
-        class="happyHour"
-        id="btnMignon"
-        onclick="mostrarTragos('2x1LaMignon')"
-      >
-        <span class="resize-text">JUEVES</span> <br />
-        DE <br />
-        <span class="resize-text">PROMOS</span>
-      </button> -->
-      <!-- <button
-        class="happyHour"
-        id="btnMojito"
-        onclick="mostrarTragos('2x1Mojito')"
-      >
-        <span class="resize-text">" 2x1 "</span> <br />
-        MOJITO
-      </button>
-      <button
-        class="happyHour"
-        id="btnAperol"
-        onclick="mostrarTragos('2x1Aperol')"
-      >
-        <span class="resize-text">" 2x1 "</span> <br />
-        APEROL <br />
-        SPRITZ
-      </button> -->
-      <button
-        class="tutorial"
-        id="imageContainer"
-        onclick="mostrarTragos('Tutorial')"
-      >
-        <span class="resize-textTutorial">TUTORIAL</span>
+      <button class="pedirLaCuenta" onclick="mostrarOpciones('pedirLaCuenta')">
+        PEDÍ LA CUENTA
       </button>
     </div>
     <div id="content" style="display: none">
@@ -111,6 +75,9 @@
         <button id="boton_pedido" onclick="enviarPedido()">
           Enviar pedido
         </button>
+        <button id="boton_mozo" onclick="enviarPedido()">
+          Llamar al Mozo
+        </button>
       </div>
     </div>
      <footer>
@@ -128,52 +95,5 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/script_selector.js"></script>
-    <!-- <script>
-      function actualizarBotonesSegunHora() {
-        const horaActual = new Date();
-
-        const btnMignon = document.getElementById("btnMignon");
-        const btnMojito = document.getElementById("btnMojito");
-        const btnAperol = document.getElementById("btnAperol");
-
-        const horaInicioMignon = new Date(horaActual);
-        horaInicioMignon.setHours(0, 0, 0); // Establecer hora de inicio para Mignon
-
-        const horaFinMignon = new Date(horaActual);
-        horaFinMignon.setHours(6, 0, 0); // Establecer hora de fin para Mignon
-
-        const horaInicioMojito = new Date(horaActual);
-        horaInicioMojito.setHours(0, 0, 0); // Establecer hora de inicio para Mojito
-
-        const horaFinMojito = new Date(horaActual);
-        horaFinMojito.setHours(6, 0, 0); // Establecer hora de fin para Mojito
-
-        const horaInicioAperol = new Date(horaActual);
-        horaInicioAperol.setHours(0, 0, 0); // Establecer hora de inicio para Aperol
-
-        const horaFinAperol = new Date(horaActual);
-        horaFinAperol.setHours(6, 0, 0); // Establecer hora de fin para Aperol
-
-        if (horaActual >= horaInicioMignon && horaActual < horaFinMignon) {
-          btnMignon.style.display = "inline-block";
-        } else {
-          btnMignon.style.display = "none";
-        }
-
-        if (horaActual >= horaInicioMojito && horaActual < horaFinMojito) {
-          btnMojito.style.display = "inline-block";
-        } else {
-          btnMojito.style.display = "none";
-        }
-
-        if (horaActual >= horaInicioAperol && horaActual < horaFinAperol) {
-          btnAperol.style.display = "inline-block";
-        } else {
-          btnAperol.style.display = "none";
-        }
-      }
-      actualizarBotonesSegunHora();
-      setInterval(actualizarBotonesSegunHora, 5000);
-    </script> -->
   </body>
 </html>
