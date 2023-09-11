@@ -434,7 +434,7 @@ select.opciones {
   margin-left: auto;
   margin-right: auto;
   width: 16rem; /* Ancho del botón */
-  height: 13rem; /* Alto del botón */
+  height: 14.5rem; /* Alto del botón */
   border-color: #fff;
   text-align: center;
 }
