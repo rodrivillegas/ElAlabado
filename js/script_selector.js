@@ -26,6 +26,8 @@ function mostrarOpciones(tipo) {
     cargarScript("./js/llamarAlMozo.js");
   }
   else if (tipo === "pedirLaCuenta") {
+    var botonComentarios = document.getElementById("btnComentarios");
+    botonComentarios.classList.add("mostrar");
     cargarScript("./js/pedirLaCuenta.js");
   }
 }

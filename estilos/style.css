@@ -465,7 +465,7 @@ select.opciones {
   background-color: #0067ff; /* Color de discoteca */
 }
 
-#btnComentarios {
+#btnComentarios, #btnComentariosMozo {
   display: none; /* Ocultar el botón inicialmente */
   background-color: #ff9800; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
@@ -477,21 +477,6 @@ select.opciones {
   margin-right: auto;
   margin-top: 1.8rem;
   margin-bottom: 2rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-  width: fit-content; /* Hacer que el ancho se ajuste al contenido */
-}
-
-#btnComentariosMozo {
-  background-color: #ff9800; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  padding: 1rem 2rem; /* Ajustar el padding para reducir el tamaño */
-  font-size: 2.2rem; /* Tamaño de fuente del botón */
-  border: 2px solid #fff;
-  border-radius: 0.7rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.8rem;
-  margin-bottom: 0.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
   width: fit-content; /* Hacer que el ancho se ajuste al contenido */
 }
@@ -529,3 +514,4 @@ footer p {
   margin: 0;
   font-size: 1.4rem;
 }
+

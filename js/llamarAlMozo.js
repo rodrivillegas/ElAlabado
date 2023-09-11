@@ -1,3 +1,41 @@
+// Función para ocultar y mostrar la animación GIF
+function toggleGifVisibility(show) {
+  var gifContainer = document.getElementById("gif-container");
+  if (show) {
+    gifContainer.style.display = "block";
+  } else {
+    gifContainer.style.display = "none";
+  }
+}
+
+// Crear un elemento de div para la imagen
+var gifContainer = document.createElement("div"); // Cambiar el ID a un nombre único
+gifContainer.id = "gif-container";
+document.body.appendChild(gifContainer);
+
+// Crear un elemento de imagen
+var imagen = document.createElement("img");
+
+// Asignar la fuente de la imagen
+imagen.src = "assets/fuegoAnim.gif";
+
+// Asignar un ID y una clase (opcional)
+imagen.id = "animacion-imagen";
+imagen.classList.add("mi-clase-imagen");
+
+// Establecer estilos CSS para la imagen
+imagen.style.width = "50rem"; // Cambia el ancho según tus necesidades
+imagen.style.height = "55rem"; // Cambia la altura según tus necesidades
+imagen.style.position = "fixed";
+imagen.style.top = "50%";
+imagen.style.left = "50%";
+imagen.style.transform = "translate(-50%, -50%)";
+imagen.style.zIndex = "9999";
+imagen.style.pointerEvents = "none";
+
+// Agregar la imagen al contenedor de animación
+gifContainer.appendChild(imagen);
+
 // Crear el título h1
 var tituloH1 = document.createElement("h1");
 tituloH1.textContent = "¿Deseas llamar al mozo?";
@@ -23,6 +61,9 @@ homeButton.classList.add("boton-seleccion"); // Agregar la clase existente para 
 
 // Agregar el evento de click al botón "Home" para que refresque la página
 homeButton.addEventListener("click", function () {
+  // Ocultar la animación GIF
+  toggleGifVisibility(false);
+
   // Mostrar el SweetAlert2 con el mensaje de advertencia
   Swal.fire({
     title: "¿Seguro quieres volver al menú principal?",
@@ -36,6 +77,9 @@ homeButton.addEventListener("click", function () {
       container: "cartelConfirmaPedido",
     },
   }).then((result) => {
+    // Mostrar nuevamente la animación GIF cuando se cierre el Swal.fire
+    toggleGifVisibility(true);
+
     // Si el usuario hace clic en "Aceptar" en el SweetAlert2, entonces recargamos la página
     if (result.isConfirmed) {
       location.reload();
@@ -58,38 +102,11 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-
 var datosUsuarioElemento = document.getElementById("datos_usuario");
 datosUsuarioElemento.style.display = "block";
 
 var botonPedido = document.getElementById("boton_mozo");
 botonPedido.style.display = "block";
-
-var botonComentarios = document.getElementById("btnComentariosMozo");
-botonComentarios.classList.add("mostrar");
-
-function mostrarDesplegable() {
-  var desplegable = document.getElementById("desplegable_comentarios");
-  desplegable.style.display = "block";
-}
-
-function cerrarDesplegable() {
-  var desplegable = document.getElementById("desplegable_comentarios");
-  desplegable.style.display = "none";
-}
-
-function guardarComentarios() {
-  var comentarios = document.getElementById("campo_comentarios").value;
-  cerrarDesplegable();
-  Toastify({
-    text: "¡Comentarios agregados!",
-    duration: 3000,
-    gravity: "top",
-    position: "right",
-    className: "toastify",
-    style: { background: "linear-gradient(to right, #037DC6, #79C1ED)" },
-  }).showToast();
-}
 
 function obtenerDetallesPedido() {
   var detallesPedido = [];
@@ -145,6 +162,10 @@ function enviarPedido() {
     return; // Detener la ejecución del código
   }
   var fechaActual = new Date();
+
+  // Ocultar la animación GIF
+  toggleGifVisibility(false);
+
   Swal.fire({
     title: "¿Estás seguro que deseas llamar al Mozo?",
     icon: "warning",
@@ -156,6 +177,9 @@ function enviarPedido() {
       container: "cartelConfirmaPedido",
     },
   }).then((result) => {
+    // Mostrar nuevamente la animación GIF cuando se cierre el Swal.fire
+    toggleGifVisibility(true);
+
     if (result.isConfirmed) {
       // Obtén los valores de los elementos necesarios para el pedido
       const nombreUsuario = document.getElementById("nombre_usuario").value;
@@ -203,6 +227,7 @@ function enviarPedido() {
             dangerMode: true,
           });
         } else {
+          toggleGifVisibility(false);
           Swal.fire({
             title: "El Mozo está en camino",
             text: "¡Le agradecemos su visita!",
@@ -211,6 +236,7 @@ function enviarPedido() {
               container: "cartelConfirmaPedido",
             },
           }).then(() => {
+            toggleGifVisibility(true);
             location.reload(); // Reiniciar la página
           });
         }

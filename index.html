@@ -47,16 +47,20 @@
         <button id="btnComentarios" onclick="mostrarDesplegable()">
           ¿Comentarios?
         </button>
+        <button id="btnComentariosMozo" onclick="mostrarDesplegable()">
+          ¿Comentarios?
+        </button>
         <div id="desplegable_comentarios" style="display: none">
           <textarea
             id="campo_comentarios"
-            placeholder="Personalizá tu pedido y/o dejanos tus comentarios 😃"
+            placeholder="Dejanos aquí tus comentarios 😃"
           ></textarea>
           <button id="btn_enviar" onclick="guardarComentarios()">
             Agregar
           </button>
           <button id="btn_cerrar" onclick="cerrarDesplegable()">Cerrar</button>
         </div>
+        
         <div id="datos_usuario" style="display: none" class="input-wrapper">
           <input
             type="text"
