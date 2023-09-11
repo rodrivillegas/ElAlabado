@@ -423,7 +423,7 @@ select.opciones {
 #opcionesBotones button {
   font-family: "Helvetica", sans-serif;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   color: #fff;
   background-color: #ff9800; /* Color principal de la fiesta */
   border: 4px solid #fff;
@@ -436,6 +436,7 @@ select.opciones {
   width: 16rem; /* Ancho del botón */
   height: 13rem; /* Alto del botón */
   border-color: #fff;
+  text-align: center;
 }
 
 #opcionesBotones button.llamarAlMozo {
