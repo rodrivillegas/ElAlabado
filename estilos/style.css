@@ -515,3 +515,25 @@ footer p {
   font-size: 1.4rem;
 }
 
+/* Estilo de los botones de incremento y decremento */
+.cantidad-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 3.4rem;
+  width: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* Estilo específico para el botón de decremento */
+.cantidad-decrementar {
+  border-radius: 50% 0 0 50%;
+}
+
+/* Estilo específico para el botón de incremento */
+.cantidad-incrementar {
+  border-radius: 0 50% 50% 0;
+}

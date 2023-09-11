@@ -77,19 +77,32 @@ function construirContenidoProductos() {
               <div class="entrada-label formatoDescripcion">${
                 producto.descripcion
               }</div>
-              <div class="precioBox">Precio Individual: $${producto.precio}</div>
+              <div class="precioBox">Precio Individual: $${
+                producto.precio
+              }</div>
               <div class="cantidad">
                 <label for="cantidad_${producto.nombre.replace(
                   /\s/g,
                   ""
                 )}" class="cantidadInfo">Cantidad de Tragos:</label>
-                <input
-                  type="number"
-                  id="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                  name="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                  min="1"
-                  class="estiloCantidad"
-                />
+                <div class="cantidad-input">
+                  <button class="cantidad-btn" onclick="decrementarCantidad('cantidad_${producto.nombre.replace(
+                    /\s/g,
+                    ""
+                  )}')">-</button>
+                  <input
+                    type="number"
+                    id="cantidad_${producto.nombre.replace(/\s/g, "")}"
+                    name="cantidad_${producto.nombre.replace(/\s/g, "")}"
+                    min="1"
+                    class="estiloCantidad"
+                    value="1"
+                  />
+                  <button class="cantidad-btn" onclick="incrementarCantidad('cantidad_${producto.nombre.replace(
+                    /\s/g,
+                    ""
+                  )}')">+</button>
+                </div>
               </div>
               <div class="seleccion">
                 <input
@@ -133,6 +146,34 @@ function construirContenidoProductos() {
 
   return contenidoProductos;
 }
+
+// Función para incrementar la cantidad
+function incrementarCantidad(inputId) {
+  const input = document.getElementById(inputId);
+  input.value = parseInt(input.value) + 1;
+}
+
+// Función para decrementar la cantidad
+function decrementarCantidad(inputId) {
+  const input = document.getElementById(inputId);
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
+
+// Establecer estilos para los botones de incremento y decremento
+document.addEventListener('DOMContentLoaded', function () {
+  const cantidadInputs = document.querySelectorAll('.cantidad-input');
+
+  cantidadInputs.forEach((cantidadInput) => {
+    const decrementButton = cantidadInput.querySelector('button:first-child');
+    const incrementButton = cantidadInput.querySelector('button:last-child');
+
+    decrementButton.classList.add('cantidad-btn', 'cantidad-decrementar');
+    incrementButton.classList.add('cantidad-btn', 'cantidad-incrementar');
+  });
+});
+
 
 const productosContainer = document.getElementById(
   "productos-containerTragosDeAutor"
