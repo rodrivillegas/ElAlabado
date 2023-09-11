@@ -1,3 +1,20 @@
+// Crear el título h1
+var tituloH1 = document.createElement("h1");
+tituloH1.textContent = "¿Deseas pedir la cuenta?";
+tituloH1.classList.add("mi-clase-h1");
+
+// Crear el título h2
+var tituloH2 = document.createElement("h2");
+tituloH2.textContent = "Completa los siguientes campos:";
+tituloH2.classList.add("mi-clase-h2");
+
+// Obtener el cuerpo del documento (body)
+var body = document.body;
+
+// Agregar los títulos al inicio del cuerpo
+body.insertBefore(tituloH2, body.firstChild);
+body.insertBefore(tituloH1, body.firstChild);
+
 // Crear el botón "Home"
 var homeButton = document.createElement("div");
 homeButton.textContent = "REGRESAR 🏡";
@@ -9,7 +26,6 @@ homeButton.addEventListener("click", function () {
   // Mostrar el SweetAlert2 con el mensaje de advertencia
   Swal.fire({
     title: "¿Seguro quieres volver al menú principal?",
-    text: "Lo ordenado se borrará por completo.",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -42,325 +58,15 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const productosJSON = `
-{
-  "Aperol": [
-    {
-      "nombre": "APEROL SPRITZ",
-      "slogan": "APERITIVO DAL 1919",
-      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
-      "precio": 1000,
-      "imagen": "./assets/sourAperol.png"
-    }
-  ]
-}
-`;
 
-const productos = JSON.parse(productosJSON);
+var datosUsuarioElemento = document.getElementById("datos_usuario");
+datosUsuarioElemento.style.display = "block";
 
-function construirContenidoProductos() {
-  let contenidoProductos = "";
+var botonPedido = document.getElementById("boton_cuenta");
+botonPedido.style.display = "block";
 
-  for (const categoria in productos) {
-    contenidoProductos += `<div class="${categoria} opciones-categoria">`;
-
-    productos[categoria].forEach((producto) => {
-      contenidoProductos += `
-        <div class="opcion ${categoria}"
-          data-categoria="${categoria}"
-          data-nombre="${producto.nombre}"
-        >
-          <div class="entrada-info">
-            <div class="columna">
-              <div class="entrada-label">${producto.nombre}</div>
-              <div class="entrada-label colorSlogan">${producto.slogan}</div>
-              <div class="entrada-label formatoDescripcion">${
-                producto.descripcion
-              }</div>
-              <div class="precioBox">Precio Individual: $${producto.precio}</div>
-              <div class="cantidad">
-                <label for="cantidad_${producto.nombre.replace(
-                  /\s/g,
-                  ""
-                )}" class="cantidadInfo">Cantidad de Tragos:</label>
-                <input
-                  type="number"
-                  id="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                  name="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                  min="1"
-                  class="estiloCantidad"
-                />
-              </div>
-              <div class="seleccion">
-                <input
-                  type="checkbox"
-                  id="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  name="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  data-categoria="${categoria}"
-                  onchange="cambiarBoton('seleccion_${producto.nombre.replace(
-                    /\s/g,
-                    ""
-                  )}', 'label_${producto.nombre.replace(
-        /\s/g,
-        ""
-      )}', 'cantidad_${producto.nombre.replace(/\s/g, "")}', '${
-        producto.nombre
-      }', ${producto.precio}, '${categoria}')"
-                />
-                <label
-                  for="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  id="label_${producto.nombre.replace(/\s/g, "")}"
-                  class="label-boton"
-                >Añadir al pedido</label
-                >
-              </div>
-            </div>
-            <div class="columna">
-              <div class="imagen">
-                <img
-                  src="${producto.imagen}"
-                  alt="Imagen de ${producto.nombre}"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-
-    contenidoProductos += "</div>";
-  }
-
-  return contenidoProductos;
-}
-
-const productosContainer = document.getElementById(
-  "productos-containerTragosDeAutor"
-);
-productosContainer.innerHTML = construirContenidoProductos();
-
-function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
-  var listaOrden = document.getElementById("orden_lista");
-  var checkbox = document.getElementById(checkboxId);
-  var label = document.getElementById(labelId);
-  var cantidadElemento = document.getElementById(cantidadId);
-  var cantidad = parseInt(cantidadElemento.value);
-  var agregar = false; // Variable para determinar si se agrega o elimina el producto
-
-  var tuOrdenElemento = document.getElementById("tu_orden");
-  var botonComentarios = document.getElementById("btnComentarios");
-  botonComentarios.classList.add("mostrar");
-
-  var itemsEnOrden = listaOrden.getElementsByClassName("categoria-comun");
-
-  if (checkbox.checked && label.textContent === "Añadir al pedido") {
-    if (cantidadElemento.value.trim() === "") {
-      Toastify({
-        text: "Selecciona una cantidad válida para poder añadir al pedido.",
-        duration: 4000,
-        gravity: "top",
-        position: "right",
-        className: "toastify",
-        style: { background: "linear-gradient(to right, #FF4D4D, #FF9999)" },
-      }).showToast();
-      return; // Detener la ejecución si el campo de cantidad está vacío
-    }
-    if (cantidad === 0) {
-      Toastify({
-        text: "Selecciona una cantidad mayor a cero para poder añadir al pedido.",
-        duration: 4000,
-        gravity: "top",
-        position: "right",
-        className: "toastify",
-        style: { background: "linear-gradient(to right, #FF4D4D, #FF9999)" },
-      }).showToast();
-      return; // Detener la ejecución si no se selecciona una cantidad válida
-    }
-    // Verificar la selección antes de agregar el producto
-
-    label.textContent = "Borrar pedido";
-    label.classList.add("boton-borrar");
-    agregar = true;
-
-    tuOrdenElemento.textContent = "Tu orden 📝";
-
-    // Habilitar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.disabled = false;
-  } else if (!checkbox.checked) {
-    label.textContent = "Añadir al pedido";
-    label.classList.remove("boton-borrar");
-
-    if (itemsEnOrden.length === 0) {
-      tuOrdenElemento.textContent = "";
-    }
-  }
-
-  agregarProducto(nombre, precio, agregar, checkboxId, listaOrden);
-
-  // Calcular y actualizar el precio final
-  var precioFinal = 0;
-  var items = listaOrden.getElementsByClassName("categoria-comun");
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var precioIndividual = parseFloat(
-      item.querySelector(".precio").textContent.replace("Precio: $", "")
-    );
-    var cantidadProducto = parseInt(
-      item.querySelector(".cantidad").textContent.replace("Cantidad: ", "")
-    );
-    var precioTotal = precioIndividual * cantidadProducto;
-    precioFinal += precioTotal;
-  }
-
-  var precioFinalElemento = document.getElementById("precio_final");
-  if (precioFinal > 0) {
-    precioFinalElemento.textContent =
-      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
-
-    // Mostrar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "block";
-  } else {
-    precioFinalElemento.textContent = "";
-
-    // Ocultar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "none";
-  }
-
-  // Calcular y actualizar el precio final
-  var precioFinal = 0;
-  var items = listaOrden.getElementsByClassName("categoria-comun");
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var precioIndividual = parseFloat(
-      item.querySelector(".precio").textContent.replace("Precio: $", "")
-    );
-    var cantidadProducto = parseInt(
-      item.querySelector(".cantidad").textContent.replace("Cantidad: ", "")
-    );
-    var precioTotal = precioIndividual * cantidadProducto;
-    precioFinal += precioTotal;
-  }
-
-  var precioFinalElemento = document.getElementById("precio_final");
-  if (precioFinal > 0) {
-    precioFinalElemento.textContent =
-      "(Valor total de la orden: $" + precioFinal.toFixed(2) + ")";
-
-    // Mostrar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "block";
-    var datosUsuarioElemento = document.getElementById("datos_usuario");
-    datosUsuarioElemento.style.display = "block";
-  } else {
-    precioFinalElemento.textContent = "";
-
-    // Ocultar el botón de pedido
-    var botonPedido = document.getElementById("boton_pedido");
-    botonPedido.style.display = "none";
-  }
-}
-
-function resetearDatos(cantidadId, checkboxId, labelId) {
-  var cantidadElemento = document.getElementById(cantidadId);
-  var checkbox = document.getElementById(checkboxId);
-  var label = document.getElementById(labelId);
-
-  cantidadElemento.value = ""; // Restablecer el valor de cantidad a vacío
-  checkbox.checked = false; // Desmarcar el checkbox
-  label.textContent = "Añadir al pedido"; // Restablecer el texto del label
-  label.classList.remove("boton-borrar");
-}
-
-function agregarProducto(nombre, precio, seleccionado, checkboxId, listaOrden) {
-  var checkbox = document.getElementById(checkboxId);
-  var cantidadElemento = checkbox.parentNode.parentNode
-    .getElementsByClassName("cantidad")[0]
-    .getElementsByTagName("input")[0];
-  var cantidad = parseInt(cantidadElemento.value);
-
-  var precioIndividual = precio;
-  var precioTotal = precio * cantidad;
-
-  if (seleccionado) {
-    var listItem = document.createElement("span");
-    listItem.classList.add("categoria-comun");
-
-    var productoDescripcion = document.createElement("div");
-    productoDescripcion.classList.add("producto-descripcion");
-
-    var nombreElemento = document.createElement("span");
-    nombreElemento.classList.add("nombre");
-    nombreElemento.innerHTML = nombre + ": ";
-
-    var cantidadElementoSpan = document.createElement("span");
-    cantidadElementoSpan.classList.add("cantidad", "cantidadDescripcion");
-    cantidadElementoSpan.innerHTML = "Cantidad: " + cantidad + "✔ ";
-
-    var precioIndividualElemento = document.createElement("span");
-    precioIndividualElemento.classList.add("precio", "precioDescripcion");
-    precioIndividualElemento.innerHTML = "Precio: $" + precioIndividual + "✔ ";
-
-    var precioTotalElemento = document.createElement("span");
-    precioTotalElemento.classList.add(
-      "precio",
-      "precio-total",
-      "precioTotalDescripcion"
-    );
-    precioTotalElemento.innerHTML = "Precio total: $" + precioTotal + "✔ ";
-
-    productoDescripcion.appendChild(nombreElemento);
-    productoDescripcion.appendChild(cantidadElementoSpan);
-    productoDescripcion.appendChild(precioIndividualElemento);
-    productoDescripcion.appendChild(precioTotalElemento);
-
-    listItem.appendChild(productoDescripcion);
-    listaOrden.appendChild(listItem);
-
-    Toastify({
-      text: "Producto agregado con éxito.",
-      duration: 3000,
-      gravity: "top",
-      position: "right",
-      className: "toastify",
-      style: { background: "linear-gradient(to right, #037DC6, #79C1ED)" },
-    }).showToast();
-  } else {
-    // Eliminar el producto de la lista si ya no está seleccionado
-    var items = listaOrden.getElementsByClassName("categoria-comun");
-    for (var i = 0; i < items.length; i++) {
-      var item = items[i];
-      if (
-        item.getElementsByClassName("nombre")[0].textContent ===
-          nombre + ": " &&
-        item.getElementsByClassName("precio", "precioDescripcion")[0]
-          .innerHTML ===
-          "Precio: $" + precioIndividual + "✔ " &&
-        item.getElementsByClassName("cantidad")[0].innerHTML ===
-          "Cantidad: " + cantidad + "✔ " &&
-        item.getElementsByClassName("precio-total")[0].innerHTML ===
-          "Precio total: $" + precioTotal + "✔ "
-      ) {
-        item.parentNode.removeChild(item);
-
-        // Resetear el valor del campo de cantidad a cero
-        cantidadElemento.value = "0";
-
-        Toastify({
-          text: "Producto eliminado con éxito.",
-          duration: 3000,
-          gravity: "top",
-          position: "right",
-          className: "toastify",
-          style: { background: "linear-gradient(to right, #FF4D4D, #FF9999)" },
-        }).showToast();
-        break;
-      }
-    }
-  }
-}
+var botonComentarios = document.getElementById("btnComentariosMozo");
+botonComentarios.classList.add("mostrar");
 
 function mostrarDesplegable() {
   var desplegable = document.getElementById("desplegable_comentarios");
@@ -374,11 +80,7 @@ function cerrarDesplegable() {
 
 function guardarComentarios() {
   var comentarios = document.getElementById("campo_comentarios").value;
-
-  // Cerrar el desplegable
   cerrarDesplegable();
-
-  // Lógica adicional para manejar los comentarios guardados
   Toastify({
     text: "¡Comentarios agregados!",
     duration: 3000,
@@ -391,25 +93,13 @@ function guardarComentarios() {
 
 function obtenerDetallesPedido() {
   var detallesPedido = [];
-  var items = listaOrden.getElementsByClassName("categoria-comun");
+  var llamadaAlMozo = {
+    nombre: "¡PEDIDO DE CUENTA! 🧾",
+    cantidad: "", // Puedes establecer la cantidad que desees
+  };
 
-  for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    var nombreElemento = item.getElementsByClassName("nombre")[0];
-    var cantidadElemento = item.getElementsByClassName("cantidad")[0];
+  detallesPedido.push(llamadaAlMozo);
 
-    var nombre = nombreElemento.textContent.replace(": ", "");
-    var cantidad = parseInt(
-      cantidadElemento.textContent.replace("Cantidad: ", "")
-    );
-
-    var detallePedido = {
-      nombre,
-      cantidad,
-    };
-
-    detallesPedido.push(detallePedido);
-  }
   return detallesPedido;
 }
 
@@ -456,7 +146,7 @@ function enviarPedido() {
   }
   var fechaActual = new Date();
   Swal.fire({
-    title: "¿Estás seguro que deseas enviar el pedido?",
+    title: "¿Estás seguro que deseas solicitar la cuenta?",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -493,14 +183,11 @@ function enviarPedido() {
       const pedido = {
         nombreUsuario,
         numeroMesa,
-        detallesPedido,
         comentarios,
+        detallesPedido,
         fecha: fechaFormateada, // Guardar la fecha formateada
         hora: horaFormateada, // Guardar la hora formateada
       };
-
-      // Console log para verificar el objeto pedido antes de enviarlo
-      console.log("Pedido:", pedido);
 
       // Obtén una referencia a la base de datos de Firebase
       const database = firebase.database();
@@ -508,17 +195,17 @@ function enviarPedido() {
       // Agrega el pedido a la base de datos
       database.ref().push(pedido, (error) => {
         if (error) {
-          console.error("Error al guardar el pedido:", error);
+          console.error("Error al solicitar la cuenta", error);
           Swal.fire({
             title: "Oops...!",
-            text: "Hubo un error al enviar el pedido",
+            text: "Hubo un error al solicitar la cuenta",
             icon: "error",
             dangerMode: true,
           });
         } else {
           Swal.fire({
-            title: "Pedido enviado con éxito",
-            text: "El tiempo estimado de demora es de 10 min. Le agradecemos su visita y le recordamos que el personal está a su disposición.",
+            title: "Su cuenta está en camino",
+            text: "¡Le agradecemos su visita!",
             icon: "success",
             customClass: {
               container: "cartelConfirmaPedido",
