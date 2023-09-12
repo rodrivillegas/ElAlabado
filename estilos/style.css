@@ -465,7 +465,8 @@ select.opciones {
   background-color: #0067ff; /* Color de discoteca */
 }
 
-#btnComentarios, #btnComentariosMozo {
+#btnComentarios,
+#btnComentariosMozo {
   display: none; /* Ocultar el botón inicialmente */
   background-color: #ff9800; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
@@ -536,4 +537,38 @@ footer p {
 /* Estilo específico para el botón de incremento */
 .cantidad-incrementar {
   border-radius: 0 50% 50% 0;
+}
+
+/* Estilos generales para el filtro selector */
+#filtro-selector {
+  display: none;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilos para el selector de categoría */
+#category-select {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  height: 5rem;
+  font-family: "Noto Serif Makasar", serif;
+}
+
+/* Estilos para las opciones en el selector */
+#category-select option {
+  font-size: 1rem;
 }

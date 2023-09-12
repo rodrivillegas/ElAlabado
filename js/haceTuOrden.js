@@ -1,3 +1,15 @@
+var listaOrden = document.getElementById("orden_lista");
+const firebaseConfig = {
+  apiKey: "AIzaSyDYoPl8tTmHs1skLtP264ooxE4xEiWGh2w",
+  authDomain: "pedidoslablonda.firebaseapp.com",
+  databaseURL: "https://pedidoslablonda-default-rtdb.firebaseio.com",
+  projectId: "pedidoslablonda",
+  storageBucket: "pedidoslablonda.appspot.com",
+  messagingSenderId: "392418607897",
+  appId: "1:392418607897:web:10767371cbcf65b0a13b88",
+};
+firebase.initializeApp(firebaseConfig);
+
 // Crear el botón "Home"
 var homeButton = document.createElement("div");
 homeButton.textContent = "REGRESAR 🏡";
@@ -27,30 +39,39 @@ homeButton.addEventListener("click", function () {
   });
 });
 
-// Agregar el botón "Home" al contenedor deseado (por ejemplo, el cuerpo del documento)
+// Agregar el botón "Home" al contenedor deseado
 document.body.appendChild(homeButton);
-
-var listaOrden = document.getElementById("orden_lista");
-const firebaseConfig = {
-  apiKey: "AIzaSyDYoPl8tTmHs1skLtP264ooxE4xEiWGh2w",
-  authDomain: "pedidoslablonda.firebaseapp.com",
-  databaseURL: "https://pedidoslablonda-default-rtdb.firebaseio.com",
-  projectId: "pedidoslablonda",
-  storageBucket: "pedidoslablonda.appspot.com",
-  messagingSenderId: "392418607897",
-  appId: "1:392418607897:web:10767371cbcf65b0a13b88",
-};
-firebase.initializeApp(firebaseConfig);
 
 const productosJSON = `
 {
-  "Aperol": [
+  "Menu": [
     {
-      "nombre": "APEROL SPRITZ",
-      "slogan": "APERITIVO DAL 1919",
+      "categoria": "PICOTEO PREVIO",
+      "nombre": "PAPAS HUMO",
       "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
       "precio": 1000,
-      "imagen": "./assets/sourAperol.png"
+      "imagen": ""
+    },
+    {
+      "categoria": "SANDWICHES",
+      "nombre": "MONTECRISTO",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENTRADAS",
+      "nombre": "EMPANADAS",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "GUARNICIONES",
+      "nombre": "ENSALADA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
     }
   ]
 }
@@ -61,123 +82,106 @@ const productos = JSON.parse(productosJSON);
 function construirContenidoProductos() {
   let contenidoProductos = "";
 
-  for (const categoria in productos) {
-    contenidoProductos += `<div class="${categoria} opciones-categoria">`;
-
-    productos[categoria].forEach((producto) => {
-      contenidoProductos += `
-        <div class="opcion ${categoria}"
-          data-categoria="${categoria}"
-          data-nombre="${producto.nombre}"
-        >
-          <div class="entrada-info">
-            <div class="columna">
-              <div class="entrada-label">${producto.nombre}</div>
-              <div class="entrada-label colorSlogan">${producto.slogan}</div>
-              <div class="entrada-label formatoDescripcion">${
-                producto.descripcion
-              }</div>
-              <div class="precioBox">Precio Individual: $${
-                producto.precio
-              }</div>
-              <div class="cantidad">
-                <label for="cantidad_${producto.nombre.replace(
+  productos.Menu.forEach((producto) => {
+    contenidoProductos += `
+      <div class="opcion ${producto.categoria}"
+        data-categoria="${producto.categoria}"
+        data-nombre="${producto.nombre}"
+      >
+        <div class="entrada-info">
+          <div class="columna">
+            <div class="entrada-label colorSlogan">${producto.categoria}</div>
+            <div class="entrada-label">${producto.nombre}</div>
+            <div class="entrada-label formatoDescripcion">${
+              producto.descripcion
+            }</div>
+            <div class="precioBox">Precio Individual: $${producto.precio}</div>
+            <div class="cantidad">
+              <label for="cantidad_${producto.nombre.replace(
+                /\s/g,
+                ""
+              )}" class="cantidadInfo">Cantidad:</label>
+              <div class="cantidad-input">
+                <button class="cantidad-btn" onclick="decrementarCantidad('cantidad_${producto.nombre.replace(
                   /\s/g,
                   ""
-                )}" class="cantidadInfo">Cantidad de Tragos:</label>
-                <div class="cantidad-input">
-                  <button class="cantidad-btn" onclick="decrementarCantidad('cantidad_${producto.nombre.replace(
-                    /\s/g,
-                    ""
-                  )}')">-</button>
-                  <input
-                    type="number"
-                    id="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                    name="cantidad_${producto.nombre.replace(/\s/g, "")}"
-                    min="1"
-                    class="estiloCantidad"
-                    value="1"
-                  />
-                  <button class="cantidad-btn" onclick="incrementarCantidad('cantidad_${producto.nombre.replace(
-                    /\s/g,
-                    ""
-                  )}')">+</button>
-                </div>
-              </div>
-              <div class="seleccion">
+                )}')">-</button>
                 <input
-                  type="checkbox"
-                  id="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  name="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  data-categoria="${categoria}"
-                  onchange="cambiarBoton('seleccion_${producto.nombre.replace(
-                    /\s/g,
-                    ""
-                  )}', 'label_${producto.nombre.replace(
-        /\s/g,
-        ""
-      )}', 'cantidad_${producto.nombre.replace(/\s/g, "")}', '${
-        producto.nombre
-      }', ${producto.precio}, '${categoria}')"
+                  type="number"
+                  id="cantidad_${producto.nombre.replace(/\s/g, "")}"
+                  name="cantidad_${producto.nombre.replace(/\s/g, "")}"
+                  min="1"
+                  class="estiloCantidad"
+                  value="1"
                 />
-                <label
-                  for="seleccion_${producto.nombre.replace(/\s/g, "")}"
-                  id="label_${producto.nombre.replace(/\s/g, "")}"
-                  class="label-boton"
-                >Añadir al pedido</label
-                >
+                <button class="cantidad-btn" onclick="incrementarCantidad('cantidad_${producto.nombre.replace(
+                  /\s/g,
+                  ""
+                )}')">+</button>
               </div>
             </div>
-            <div class="columna">
-              <div class="imagen">
-                <img
-                  src="${producto.imagen}"
-                  alt="Imagen de ${producto.nombre}"
-                />
-              </div>
+            <div class="seleccion">
+              <input
+                type="checkbox"
+                id="seleccion_${producto.nombre.replace(/\s/g, "")}"
+                name="seleccion_${producto.nombre.replace(/\s/g, "")}"
+                data-categoria="${producto.categoria}"
+                onchange="cambiarBoton('seleccion_${producto.nombre.replace(
+                  /\s/g,
+                  ""
+                )}', 'label_${producto.nombre.replace(
+      /\s/g,
+      ""
+    )}', 'cantidad_${producto.nombre.replace(/\s/g, "")}', '${
+      producto.nombre
+    }', ${producto.precio}, '${producto.categoria}')"
+              />
+              <label
+                for="seleccion_${producto.nombre.replace(/\s/g, "")}"
+                id="label_${producto.nombre.replace(/\s/g, "")}"
+                class="label-boton"
+              >Añadir al pedido</label
+              >
+            </div>
+          </div>
+          <div class="columna">
+            <div class="imagen">
+              <img
+                src="${producto.imagen}"
+                alt="Imagen de ${producto.nombre}"
+              />
             </div>
           </div>
         </div>
-      `;
-    });
-
-    contenidoProductos += "</div>";
-  }
+      </div>
+    `;
+  });
 
   return contenidoProductos;
 }
 
-// Función para incrementar la cantidad
-function incrementarCantidad(inputId) {
-  const input = document.getElementById(inputId);
-  input.value = parseInt(input.value) + 1;
-}
+function filterTable() {
+  var category = document.getElementById("category-select").value;
+  var productosContainer = document.getElementById(
+    "productos-container"
+  );
+  var productosDivs = productosContainer.querySelectorAll(".opcion");
 
-// Función para decrementar la cantidad
-function decrementarCantidad(inputId) {
-  const input = document.getElementById(inputId);
-  if (parseInt(input.value) > 1) {
-    input.value = parseInt(input.value) - 1;
-  }
-}
+  productosDivs.forEach(function (productoDiv) {
+    var categoriaProducto = productoDiv.getAttribute("data-categoria");
 
-// Establecer estilos para los botones de incremento y decremento
-document.addEventListener('DOMContentLoaded', function () {
-  const cantidadInputs = document.querySelectorAll('.cantidad-input');
-
-  cantidadInputs.forEach((cantidadInput) => {
-    const decrementButton = cantidadInput.querySelector('button:first-child');
-    const incrementButton = cantidadInput.querySelector('button:last-child');
-
-    decrementButton.classList.add('cantidad-btn', 'cantidad-decrementar');
-    incrementButton.classList.add('cantidad-btn', 'cantidad-incrementar');
+    if (category === "todas" || category === categoriaProducto) {
+      productoDiv.style.display = "block";
+    } else {
+      productoDiv.style.display = "none";
+    }
   });
-});
-
+}
 
 const productosContainer = document.getElementById(
-  "productos-containerTragosDeAutor"
+  "productos-container"
 );
+
 productosContainer.innerHTML = construirContenidoProductos();
 
 function cambiarBoton(checkboxId, labelId, cantidadId, nombre, precio) {
@@ -403,6 +407,33 @@ function agregarProducto(nombre, precio, seleccionado, checkboxId, listaOrden) {
   }
 }
 
+// Función para incrementar la cantidad
+function incrementarCantidad(inputId) {
+  const input = document.getElementById(inputId);
+  input.value = parseInt(input.value) + 1;
+}
+
+// Función para decrementar la cantidad
+function decrementarCantidad(inputId) {
+  const input = document.getElementById(inputId);
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
+
+// Establecer estilos para los botones de incremento y decremento
+document.addEventListener("DOMContentLoaded", function () {
+  const cantidadInputs = document.querySelectorAll(".cantidad-input");
+
+  cantidadInputs.forEach((cantidadInput) => {
+    const decrementButton = cantidadInput.querySelector("button:first-child");
+    const incrementButton = cantidadInput.querySelector("button:last-child");
+
+    decrementButton.classList.add("cantidad-btn", "cantidad-decrementar");
+    incrementButton.classList.add("cantidad-btn", "cantidad-incrementar");
+  });
+});
+
 function mostrarDesplegable() {
   var desplegable = document.getElementById("desplegable_comentarios");
   desplegable.style.display = "block";
@@ -539,9 +570,6 @@ function enviarPedido() {
         fecha: fechaFormateada, // Guardar la fecha formateada
         hora: horaFormateada, // Guardar la hora formateada
       };
-
-      // Console log para verificar el objeto pedido antes de enviarlo
-      console.log("Pedido:", pedido);
 
       // Obtén una referencia a la base de datos de Firebase
       const database = firebase.database();

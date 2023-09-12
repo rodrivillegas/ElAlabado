@@ -25,7 +25,6 @@
       <div class="categoria" style="text-align: center">
         <h2>Gestioná On-line tu visita</h2>
       </div>
-
       <button class="haceTuOrden" onclick="mostrarOpciones('haceTuOrden')">
         HACÉ TU ORDEN
       </button>
@@ -36,9 +35,20 @@
         PEDÍ LA CUENTA
       </button>
     </div>
+   
+    <div id="filtro-selector" style="display: none">
+      <select id="category-select" onchange="filterTable();">
+        <option value="todas">Todas las categorías</option>
+        <option value="PICOTEO PREVIO">PICOTEO PREVIO</option>
+        <option value="SANDWICHES">SANDWICHES</option>
+        <option value="ENTRADAS">ENTRADAS</option>
+        <option value="GUARNICIONES">GUARNICIONES</option>
+      </select>
+      <div id="productos-container"></div>
+    </div>
+
     <div id="content" style="display: none">
-      <div id="productos-container2x1"></div>
-      <div id="productos-containerTragosDeAutor"></div>
+      <div id="productos-container"></div>
       <div class="orden" style="text-align: center">
         <h2 id="tu_orden"></h2>
         <ul id="orden_lista"></ul>
@@ -60,7 +70,7 @@
           </button>
           <button id="btn_cerrar" onclick="cerrarDesplegable()">Cerrar</button>
         </div>
-        
+
         <div id="datos_usuario" style="display: none" class="input-wrapper">
           <input
             type="text"
@@ -79,19 +89,15 @@
         <button id="boton_pedido" onclick="enviarPedido()">
           Enviar pedido
         </button>
-        <button id="boton_mozo" onclick="enviarPedido()">
-          Llamar al Mozo
-        </button>
+        <button id="boton_mozo" onclick="enviarPedido()">Llamar al Mozo</button>
         <button id="boton_cuenta" onclick="enviarPedido()">
           Pedir la Cuenta
         </button>
       </div>
     </div>
-     <footer>
-      <p>© 2023  EL ALABADO On-line. Todos los derechos reservados.</p>
-      <p>
-        Playa Chic - Almafuerte - Tel (03571) 34-9033.
-      </p>
+    <footer>
+      <p>© 2023 EL ALABADO On-line. Todos los derechos reservados.</p>
+      <p>Playa Chic - Almafuerte - Tel (03571) 34-9033.</p>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
