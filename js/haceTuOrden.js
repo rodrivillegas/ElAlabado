@@ -203,7 +203,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "OJO DE BIFE A LA PARRILLA ('25min.)",
+      "nombre": "OJO DE BIFE A LA PARRILLA (25min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4500,
       "imagen": "./assets/Carne.jpg"
@@ -211,7 +211,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "BIFE DE CHORIZO ('25min.)",
+      "nombre": "BIFE DE CHORIZO (25min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4400,
       "imagen": "./assets/Carne.jpg"
@@ -219,7 +219,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "COSTILLA BANDERITA  ('30min.)",
+      "nombre": "COSTILLA BANDERITA (30min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4300,
       "imagen": "./assets/Carne.jpg"
@@ -227,7 +227,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "T BONE A LA PARRILLA ('35min.)",
+      "nombre": "T BONE A LA PARRILLA (35min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 7500,
       "imagen": "./assets/Carne.jpg"
@@ -235,7 +235,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "TOMAWAWK ('35min.)",
+      "nombre": "TOMAWAWK (35min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 9900,
       "imagen": "./assets/Carne.jpg"
@@ -243,7 +243,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "COSTILLA VENTANA ('30min.)",
+      "nombre": "COSTILLA VENTANA (30min.)",
       "descripcion": "6 Costillas 20cm centro del costillar, p/ compartir. Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
       "precio": 18900,
       "imagen": "./assets/Carne.jpg"
@@ -251,7 +251,7 @@ const productosJSON = `
     {
       "categoria": "PRINCIPALES",
       "genero": "PRINCIPALES",
-      "nombre": "VACIO ('35min.)",
+      "nombre": "VACIO (35min.)",
       "descripcion": "Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
       "precio": 9900,
       "imagen": "./assets/Carne.jpg"
