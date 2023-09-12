@@ -256,7 +256,7 @@ function enviarPedido() {
         } else {
           toggleGifVisibility(false);
           Swal.fire({
-            title: "Recibimos su petición y su cuenta ya está en camino",
+            title: "Recibimos su petición y la cuenta ya está en camino.",
             text: "¡Le agradecemos su visita!",
             icon: "success",
             customClass: {

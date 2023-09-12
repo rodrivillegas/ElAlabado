@@ -126,7 +126,7 @@ const productosJSON = `
       "nombre": "JUGO MINT TONIC",
       "descripcion": "Menta + Syrup, Jugo de limón + Agua tónica",
       "precio": 900,
-      "imagen": "./assets/jugoNaranja.jpg"
+      "imagen": "./assets/JugoNaranja.jpg"
     },
     {
       "categoria": "JUGOS",
@@ -134,7 +134,7 @@ const productosJSON = `
       "nombre": "JUGO FUERTE ALMA",
       "descripcion": "Jugo Multifrutas + Jugo de limón + Syrup de vainilla",
       "precio": 900,
-      "imagen": "./assets/jugoNaranja.jpg"
+      "imagen": "./assets/JugoNaranja.jpg"
     },
     {
       "categoria": "JUGOS",
@@ -142,7 +142,7 @@ const productosJSON = `
       "nombre": "JUGO DE NARANJA 500cc.",
       "descripcion": "Jugo de naranja naturalmente exprimido",
       "precio": 900,
-      "imagen": "./assets/jugoNaranja.jpg"
+      "imagen": "./assets/JugoNaranja.jpg"
     }
   ]
 }

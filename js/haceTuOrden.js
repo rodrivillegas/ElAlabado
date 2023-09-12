@@ -98,27 +98,27 @@ const productosJSON = `
     },
     {
       "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "MONTECRISTO",
+      "genero": "SUNSET (de 19hs a 21hs)",
+      "nombre": "SANDWICH MONTECRISTO",
       "descripcion": "Jamón cocido + Tomate asado + Cebolla encurtida + Salsa de mostaza.",
       "precio": 2800,
-      "imagen": ""
+      "imagen": "./assets/Sandwich.jpg"
     },
     {
       "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "VEGGIE",
+      "genero": "SUNSET (de 19hs a 21hs)",
+      "nombre": "SANDWICH VEGGIE",
       "descripcion": "Verduras asadas (berenjenas + calabacín + zanahorias), Pimientos en escabeche + Queso + Salsa de mostaza + Miel.",
       "precio": 2700,
-      "imagen": ""
+      "imagen": "./assets/Sandwich.jpg"
     },
     {
       "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "GRONCHO",
+      "genero": "SUNSET (de 19hs a 21hs)",
+      "nombre": "SANDWICH GRONCHO",
       "descripcion": "Bondiola o Jamón Crudo + Queso + Manteca especiada (elige en los comentarios).",
       "precio": 2700,
-      "imagen": ""
+      "imagen": "./assets/Sandwich.jpg"
     },
     {
       "categoria": "ENTRADAS",
@@ -158,7 +158,7 @@ const productosJSON = `
       "nombre": "DEL VALLE",
       "descripcion": "Mix de hojas verdes + Cherries confitados + Cubos de queso + Crocante de maní tostado + crema agria.",
       "precio": 2400,
-      "imagen": ""
+      "imagen": "./assets/Ensalada.jpg"
     },
     {
       "categoria": "ENSALADAS",
@@ -166,7 +166,7 @@ const productosJSON = `
       "nombre": "KUSAMA",
       "descripcion": "Lechuga + Garbanzos salteados + Choclo tostado + Quinua pop.",
       "precio": 2200,
-      "imagen": ""
+      "imagen": "./assets/Ensalada.jpg"
     },
     {
       "categoria": "ENSALADAS",
@@ -174,7 +174,7 @@ const productosJSON = `
       "nombre": "CAPRICHO",
       "descripcion": "Rúcula + Queso.",
       "precio": 2200,
-      "imagen": ""
+      "imagen": "./assets/Ensalada.jpg"
     },
     {
       "categoria": "ENSALADAS",
@@ -182,7 +182,7 @@ const productosJSON = `
       "nombre": "MIXTA",
       "descripcion": "Lechuga + Tomate + Cebolla + Huevo.",
       "precio": 2200,
-      "imagen": ""
+      "imagen": "./assets/Ensalada.jpg"
     },
     {
       "categoria": "GUARNICIONES",
@@ -190,7 +190,7 @@ const productosJSON = `
       "nombre": "PAPAS FRITAS",
       "descripcion": "",
       "precio": 1800,
-      "imagen": ""
+      "imagen": "./assets/PapasFritas.jpg"
     },
     {
       "categoria": "GUARNICIONES",
@@ -198,7 +198,7 @@ const productosJSON = `
       "nombre": "MIX DE VERDURAS AL RESCOLDO",
       "descripcion": "",
       "precio": 2200,
-      "imagen": ""
+      "imagen": "./assets/mixVerduras.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -206,7 +206,7 @@ const productosJSON = `
       "nombre": "OJO DE BIFE A LA PARRILLA ('25min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4500,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -214,7 +214,7 @@ const productosJSON = `
       "nombre": "BIFE DE CHORIZO ('25min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4400,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -222,7 +222,7 @@ const productosJSON = `
       "nombre": "COSTILLA BANDERITA  ('30min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 4300,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -230,7 +230,7 @@ const productosJSON = `
       "nombre": "T BONE A LA PARRILLA ('35min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 7500,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -238,7 +238,7 @@ const productosJSON = `
       "nombre": "TOMAWAWK ('35min.)",
       "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
       "precio": 9900,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -246,7 +246,7 @@ const productosJSON = `
       "nombre": "COSTILLA VENTANA ('30min.)",
       "descripcion": "6 Costillas 20cm centro del costillar, p/ compartir. Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
       "precio": 18900,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -254,7 +254,7 @@ const productosJSON = `
       "nombre": "VACIO ('35min.)",
       "descripcion": "Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
       "precio": 9900,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -262,7 +262,7 @@ const productosJSON = `
       "nombre": "MATAMBRE DE CERDO A LA PARRILLA",
       "descripcion": "Solo, asiático (con salsa teriyaki) o al limón (elige en los comentarios).",
       "precio": 3500,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -270,7 +270,7 @@ const productosJSON = `
       "nombre": "POLLO GRILLADO",
       "descripcion": "Pata muslo o pechuga, solo, al limón o a la mostaza (elige en los comentarios).",
       "precio": 3200,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -278,7 +278,7 @@ const productosJSON = `
       "nombre": "MILANESA DE OJO DE BIFE",
       "descripcion": "Rebozada con huevo saborizado y panko.",
       "precio": 4900,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PRINCIPALES",
@@ -286,7 +286,7 @@ const productosJSON = `
       "nombre": "BERENJENA ASADA RELLENA",
       "descripcion": "Rellena de pimiento + Cebolla + Tomate + Huevo + Queso + Crema agria + Reducción de aceto + Ralladura de limón.",
       "precio": 3500,
-      "imagen": ""
+      "imagen": "./assets/Carne.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -366,7 +366,7 @@ const productosJSON = `
       "nombre": "HELADO DE AMERICANA",
       "descripcion": "Con crocante de frutos secos.",
       "precio": 1500,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "POSTRES",
@@ -374,7 +374,7 @@ const productosJSON = `
       "nombre": "BUDIN DE PAN",
       "descripcion": "Acompañado con dulce de leche y garrapiñada de girasol.",
       "precio": 1600,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "POSTRES",
@@ -382,7 +382,7 @@ const productosJSON = `
       "nombre": "BROWNIE PATAGONIA",
       "descripcion": "Base de brownie + Dulce de leche + Corazón de frutos rojos + Crema chantillí + Merengue.",
       "precio": 2500,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "POSTRES",
@@ -390,7 +390,7 @@ const productosJSON = `
       "nombre": "PAVLOVA SIN T.A.C.C.",
       "descripcion": "Base de merengue + Dulce de leche + Crema chantilly. Opciones (según la estación): a) Pera; b) Frutos rojos; c) Frutilla; d) Frutas de estación (elige en los comentarios).",
       "precio": 2500,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "POSTRES",
@@ -398,7 +398,7 @@ const productosJSON = `
       "nombre": "CREMOSO DE CHOCOLATE AMARGO SIN T.A.C.C.",
       "descripcion": "Tierra de cacao con harina de coco + Lajas de caramelo con semillas de sésamo + Curd de naranja.",
       "precio": 2200,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "POSTRES",
@@ -406,7 +406,7 @@ const productosJSON = `
       "nombre": "SHOT DEGUSTACIÓN x 3 SIN T.A.C.C.",
       "descripcion": "",
       "precio": 2900,
-      "imagen": ""
+      "imagen": "./assets/BudinPan.jpg"
     },
     {
       "categoria": "MERIENDAS",
