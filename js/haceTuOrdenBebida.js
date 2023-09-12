@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Crear el título h1
 var tituloH1 = document.createElement("h1");
-tituloH1.textContent = "MENÚ DE SABORES";
+tituloH1.textContent = "MENÚ DE BEBIDAS";
 tituloH1.classList.add("mi-clase-h1");
 
 // Obtener el cuerpo del documento (body)
@@ -57,388 +57,92 @@ const productosJSON = `
 {
   "Menu": [
     {
-      "categoria": "PICOTEO PREVIO",
-      "genero": "PAPAS",
-      "nombre": "PAPAS HUMO",
-      "descripcion": "Papas fritas + lactonesa ahumada de limón + verdeo.",
-      "precio": 1900,
-      "imagen": "./assets/PapasHumo.jpg"
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA CLASICA 800cc.",
+      "descripcion": "Limón + Agua + Menta + Jengibre + Syrup de Limón.",
+      "precio": 900,
+      "imagen": "./assets/Limonada.jpg"
     },
     {
-      "categoria": "PICOTEO PREVIO",
-      "genero": "PAPAS",
-      "nombre": "PAPAS ALFREDO",
-      "descripcion": "Papas fritas + Crema + Queso + Perejil.",
-      "precio": 2000,
-      "imagen": "./assets/PapasAlfredo.jpg"
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA CLASICA 1L",
+      "descripcion": "Limón + Agua + Menta + Jengibre + Syrup de Limón.",
+      "precio": 1600,
+      "imagen": "./assets/Limonada.jpg"
     },
     {
-      "categoria": "PICOTEO PREVIO",
-      "genero": "BRUSQUETAS",
-      "nombre": "OMNIVORAS",
-      "descripcion": "a) Queso untable + Jamón serrano + Cherries confitados + Perejil; b) Queso tubo + Pimiento en escabeche + Hierbas frescas; c) Lactonesa + Pollo + Pesto de hierbas (elige en los comentarios)",
-      "precio": 2800,
-      "imagen": "./assets/Brusqueta1.jpg"
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA ALABADO 500cc.",
+      "descripcion": "Limón + Agua de Rosas + Flor de Hibiscus.",
+      "precio": 900,
+      "imagen": "./assets/LimonadaAlabado.jpg"
     },
     {
-      "categoria": "PICOTEO PREVIO",
-      "genero": "BRUSQUETAS",
-      "nombre": "PASTOLOVER",
-      "descripcion": "a) Baba ganush de berenjena + Zanahoria encurtida + Rúcula; b) Base de oliva + Manteca de ajo + Cherry confitado; c) Queso brie + Pera asada + nuez (elige en los comentarios)",
-      "precio": 2800,
-      "imagen": "./assets/Brusqueta1.jpg"
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA ALABADO 1L",
+      "descripcion": "Limón + Agua de Rosas + Flor de Hibiscus.",
+      "precio": 1600,
+      "imagen": "./assets/LimonadaAlabado.jpg"
     },
     {
-      "categoria": "PICOTEO PREVIO",
-      "genero": "BRUSQUETAS",
-      "nombre": "DEGUSTACIÓN SERRANA",
-      "descripcion": "Seleccion de quesos y fiambres + Aceitunas + Cherries confitados.",
-      "precio": 3900,
-      "imagen": "./assets/Brusqueta1.jpg"
-    },
-    {
-      "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "MONTECRISTO",
-      "descripcion": "Jamón cocido + Tomate asado + Cebolla encurtida + Salsa de mostaza.",
-      "precio": 2800,
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA CHIC 500cc",
+      "descripcion": "Limón + Pepino + Agua + Ananá.",
+      "precio": 800,
       "imagen": ""
     },
     {
-      "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "VEGGIE",
-      "descripcion": "Verduras asadas (berenjenas + calabacín + zanahorias), Pimientos en escabeche + Queso + Salsa de mostaza + Miel.",
-      "precio": 2700,
-      "imagen": ""
-    },
-    {
-      "categoria": "SANDWICHES",
-      "genero": "SUNSET SANDWICHES (de 19hs a 21hs)",
-      "nombre": "GRONCHO",
-      "descripcion": "Bondiola o Jamón Crudo + Queso + Manteca especiada (elige en los comentarios).",
-      "precio": 2700,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENTRADAS",
-      "genero": "ENTRADAS",
-      "nombre": "TAQUITOS DE COSTILLA",
-      "descripcion": "Carne de ternera braseada y desmenuzada + Salsa criolla + lactosa.",
-      "precio": 3400,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENTRADAS",
-      "genero": "ENTRADAS",
-      "nombre": "EMPANADAS",
-      "descripcion": "a) Carne desmenuzada; b) Verduras; c) Queso y cebolla (elige en los comentarios).",
-      "precio": 600,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENTRADAS",
-      "genero": "ENTRADAS",
-      "nombre": "MIX DE EMBUTIDOS Y ACHURAS",
-      "descripcion": "Chorizo + Morcilla + Chinchulines + Mollejas.",
-      "precio": 3900,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENTRADAS",
-      "genero": "ENTRADAS",
-      "nombre": "PROVOLETAS",
-      "descripcion": "Sola, al pesto o con chimichurri (elige en los comentarios).",
-      "precio": 2900,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENSALADAS",
-      "genero": "ENSALADAS",
-      "nombre": "DEL VALLE",
-      "descripcion": "Mix de hojas verdes + Cherries confitados + Cubos de queso + Crocante de maní tostado + crema agria.",
-      "precio": 2400,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENSALADAS",
-      "genero": "ENSALADAS",
-      "nombre": "KUSAMA",
-      "descripcion": "Lechuga + Garbanzos salteados + Choclo tostado + Quinua pop.",
-      "precio": 2200,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENSALADAS",
-      "genero": "ENSALADAS",
-      "nombre": "CAPRICHO",
-      "descripcion": "Rúcula + Queso.",
-      "precio": 2200,
-      "imagen": ""
-    },
-    {
-      "categoria": "ENSALADAS",
-      "genero": "ENSALADAS",
-      "nombre": "MIXTA",
-      "descripcion": "Lechuga + Tomate + Cebolla + Huevo.",
-      "precio": 2200,
-      "imagen": ""
-    },
-    {
-      "categoria": "GUARNICIONES",
-      "genero": "GUARNICIONES",
-      "nombre": "PAPAS FRITAS",
-      "descripcion": "",
-      "precio": 1800,
-      "imagen": ""
-    },
-    {
-      "categoria": "GUARNICIONES",
-      "genero": "GUARNICIONES",
-      "nombre": "MIX DE VERDURAS AL RESCOLDO",
-      "descripcion": "",
-      "precio": 2200,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "OJO DE BIFE A LA PARRILLA ('25min.)",
-      "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
-      "precio": 4500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "BIFE DE CHORIZO ('25min.)",
-      "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
-      "precio": 4400,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "COSTILLA BANDERITA  ('30min.)",
-      "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
-      "precio": 4300,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "T BONE A LA PARRILLA ('35min.)",
-      "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
-      "precio": 7500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "TOMAWAWK ('35min.)",
-      "descripcion": "Se asan en el momento, favor de considerar tiempo y disponibilidad.",
-      "precio": 9900,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "COSTILLA VENTANA ('30min.)",
-      "descripcion": "6 Costillas 20cm centro del costillar, p/ compartir. Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
-      "precio": 18900,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "VACIO ('35min.)",
-      "descripcion": "Solo fines de semana. Favor de considerar tiempo y disponibilidad.",
-      "precio": 9900,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "MATAMBRE DE CERDO A LA PARRILLA",
-      "descripcion": "Solo, asiático (con salsa teriyaki) o al limón (elige en los comentarios).",
-      "precio": 3500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "POLLO GRILLADO",
-      "descripcion": "Pata muslo o pechuga, solo, al limón o a la mostaza (elige en los comentarios).",
-      "precio": 3200,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES",
-      "nombre": "MILANESA DE OJO DE BIFE",
-      "descripcion": "Rebozada con huevo saborizado y panko.",
-      "precio": 4900,
-      "imagen": ""
-    },
-    {
-      "categoria": "PRINCIPALES",
-      "genero": "PRINCIPALES VEGGIE",
-      "nombre": "BERENJENA ASADA RELLENA",
-      "descripcion": "Rellena de pimiento + Cebolla + Tomate + Huevo + Queso + Crema agria + Reducción de aceto + Ralladura de limón.",
-      "precio": 3500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "PASTAS",
-      "nombre": "SORRENTINOS",
-      "descripcion": "a) Jamón + Queso + Pimientos asados; b) Hongos + Coliflor asado + Queso (elige en los comentarios).",
-      "precio": 3500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "PASTAS",
-      "nombre": "RAVIOLES",
-      "descripcion": "a) Calabaza + Queso + Maní tostado; b) Carne + Verduras al disco (elige en los comentarios).",
-      "precio": 3500,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "PASTAS",
-      "nombre": "TALLARINES",
-      "descripcion": "",
-      "precio": 3200,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "PASTAS",
-      "nombre": "LASAGNA DE OSOBUCO BRASEADO",
-      "descripcion": "Consultar disponibilidad.",
-      "precio": 4200,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "PASTAS",
-      "nombre": "LASAGNA DE VERDURAS",
-      "descripcion": "Consultar disponibilidad.",
-      "precio": 3900,
-      "imagen": ""
-    },
-    {
-      "categoria": "PASTAS Y SALSAS",
-      "genero": "ELECCION",
-      "nombre": "SALSA:",
-      "descripcion": "a) Roja: Salsa de tomate + Albahaca; b) Mixta: Salsa roja + Crema; c) Champiñones: Champiñones + Vino blanco + Crema (elige en los comentarios)",
-      "precio": 0,
-      "imagen": ""
-    },
-    {
-      "categoria": "MENU INFANTIL",
-      "genero": "MENU",
-      "nombre": "CHURRASQUITO INFANTIL",
-      "descripcion": "Ojo de bife angosto acompañado de papas fritas.",
-      "precio": 2900,
-      "imagen": ""
-    },
-    {
-      "categoria": "MENU INFANTIL",
-      "genero": "MENU",
-      "nombre": "TALLARINES INFANTIL",
-      "descripcion": "Con salsa crema o mixta.",
-      "precio": 2900,
-      "imagen": ""
-    },
-    {
-      "categoria": "MENU INFANTIL",
-      "genero": "MENU",
-      "nombre": "SORRENTINOS INFANTIL",
-      "descripcion": "Rellenos de jamón y queso.",
-      "precio": 2900,
-      "imagen": ""
-    },
-    {
-      "categoria": "POSTRES",
-      "genero": "CLASICOS",
-      "nombre": "HELADO DE AMERICANA",
-      "descripcion": "Con crocante de frutos secos.",
+      "categoria": "LIMONADA",
+      "genero": "SIN ALCOHOL",
+      "nombre": "LIMONADA CHIC 1L.",
+      "descripcion": "Limón + Pepino + Agua + Ananá.",
       "precio": 1500,
       "imagen": ""
     },
     {
-      "categoria": "POSTRES",
-      "genero": "CLASICOS",
-      "nombre": "BUDIN DE PAN",
-      "descripcion": "Acompañado con dulce de leche y garrapiñada de girasol.",
-      "precio": 1600,
-      "imagen": ""
+      "categoria": "GASEOSAS Y AGUAS",
+      "genero": "SIN ALCOHOL",
+      "nombre": "PEPSI CLASICA o CERO AZUCAR",
+      "descripcion": "(elige en los comentarios)",
+      "precio": 700,
+      "imagen": "./assets/Pepsi.jpg"
     },
     {
-      "categoria": "POSTRES",
-      "genero": "SELECTOS",
-      "nombre": "BROWNIE PATAGONIA",
-      "descripcion": "Base de brownie + Dulce de leche + Corazón de frutos rojos + Crema chantillí + Merengue.",
-      "precio": 2500,
-      "imagen": ""
+      "categoria": "GASEOSAS Y AGUAS",
+      "genero": "SIN ALCOHOL",
+      "nombre": "SEVEN UP CLASICA o CERO AZUCAR",
+      "descripcion": "(elige en los comentarios)",
+      "precio": 700,
+      "imagen": "./assets/7up.jpg"
     },
     {
-      "categoria": "POSTRES",
-      "genero": "SELECTOS",
-      "nombre": "PAVLOVA SIN T.A.C.C.",
-      "descripcion": "Base de merengue + Dulce de leche + Crema chantilly. Opciones (según la estación): a) Pera; b) Frutos rojos; c) Frutilla; d) Frutas de estación (elige en los comentarios).",
-      "precio": 2500,
-      "imagen": ""
+      "categoria": "JUGOS",
+      "genero": "SIN ALCOHOL",
+      "nombre": "JUGO MINT TONIC",
+      "descripcion": "Menta + Syrup, Jugo de limón + Agua tónica",
+      "precio": 900,
+      "imagen": "./assets/jugoNaranja.jpg"
     },
     {
-      "categoria": "POSTRES",
-      "genero": "SELECTOS",
-      "nombre": "CREMOSO DE CHOCOLATE AMARGO SIN T.A.C.C.",
-      "descripcion": "Tierra de cacao con harina de coco + Lajas de caramelo con semillas de sésamo + Curd de naranja.",
-      "precio": 2200,
-      "imagen": ""
+      "categoria": "JUGOS",
+      "genero": "SIN ALCOHOL",
+      "nombre": "JUGO FUERTE ALMA",
+      "descripcion": "Jugo Multifrutas + Jugo de limón + Syrup de vainilla",
+      "precio": 900,
+      "imagen": "./assets/jugoNaranja.jpg"
     },
     {
-      "categoria": "POSTRES",
-      "genero": "SELECTOS",
-      "nombre": "SHOT DEGUSTACIÓN x 3 SIN T.A.C.C.",
-      "descripcion": "",
-      "precio": 2900,
-      "imagen": ""
-    },
-    {
-      "categoria": "MERIENDAS",
-      "genero": "MERIENDA",
-      "nombre": "M. CLASICA",
-      "descripcion": "Café con leche o infusión + 2 tostadas de pan de campo + mermelada de fruta de estación + Queso crema + Dulce de leche + Jugo de naranja.",
-      "precio": 1800,
-      "imagen": ""
-    },
-    {
-      "categoria": "MERIENDAS",
-      "genero": "MERIENDA",
-      "nombre": "M. ENERGETICA",
-      "descripcion": "Café con leche o infusión + 2 tostadas de pan de campo + mermelada de fruta de estación + Queso crema + Dulce de leche + Jugo de naranja (elige en los comentarios)",
-      "precio": 2000,
-      "imagen": ""
-    },
-    {
-      "categoria": "MERIENDAS",
-      "genero": "MERIENDA",
-      "nombre": "M. GOLOSA",
-      "descripcion": "Café con leche o infusión + Panqueque + Dulce de leche + Rodajas de frutas de estación + Miel + Nueces picadas + Canela (elige en los comentarios).",
-      "precio": 2300,
-      "imagen": ""
-    },
-    {
-      "categoria": "MERIENDAS",
-      "genero": "MERIENDACLÁSICA",
-      "nombre": "M. 5to PECADO",
-      "descripcion": "Café con leche o infusión + Sandwich de pan de campo + Manteca + Jamon + Queso + Tomate + Huevo revuelto + Jugo de naranja (elige en los comentarios).",
-      "precio": 2300,
-      "imagen": ""
+      "categoria": "JUGOS",
+      "genero": "SIN ALCOHOL",
+      "nombre": "JUGO DE NARANJA 500cc.",
+      "descripcion": "Jugo de naranja naturalmente exprimido",
+      "precio": 900,
+      "imagen": "./assets/jugoNaranja.jpg"
     }
   ]
 }
@@ -527,9 +231,9 @@ function construirContenidoProductos() {
   return contenidoProductos;
 }
 
-function filterTable() {
-  var category = document.getElementById("category-select").value;
-  var productosContainer = document.getElementById("productos-container");
+function filterTable1() {
+  var category = document.getElementById("category-select1").value;
+  var productosContainer = document.getElementById("productos-container1");
   var productosDivs = productosContainer.querySelectorAll(".opcion");
 
   productosDivs.forEach(function (productoDiv, index) {
@@ -553,7 +257,7 @@ function filterTable() {
 
 
 const productosContainer = document.getElementById(
-  "productos-container"
+  "productos-container1"
 );
 
 productosContainer.innerHTML = construirContenidoProductos();

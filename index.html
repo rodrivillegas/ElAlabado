@@ -26,7 +26,10 @@
         <h2>Gestioná On-line tu visita</h2>
       </div>
       <button class="haceTuOrden" onclick="mostrarOpciones('haceTuOrden')">
-        HACÉ TU ORDEN
+        CARTA DE COMIDAS
+      </button>
+      <button class="haceTuOrdenBebida" onclick="mostrarOpciones('haceTuOrdenBebida')">
+        CARTA DE BEBIDAS
       </button>
       <button class="llamarAlMozo" onclick="mostrarOpciones('llamarAlMozo')">
         LLAMÁ AL MOZO
@@ -45,14 +48,30 @@
         <option value="ENTRADAS">ENTRADAS</option>
         <option value="GUARNICIONES">GUARNICIONES</option> 
         <option value="PRINCIPALES">PRINCIPALES</option>
-        <option value="PASTAS">PASTAS</option>
-        <option value="SALSAS">PASTAS</option>
+        <option value="PASTAS Y SALSAS">PASTAS Y SALSAS</option>
         <option value="MENU INFANTIL">MENU INFANTIL</option>
         <option value="POSTRES">POSTRES</option>
         <option value="MERIENDAS">MERIENDAS</option>
-
       </select>
       <div id="productos-container"></div>
+    </div>
+
+    <div id="filtro-selector1" style="display: none">
+      <select id="category-select1" onchange="filterTable1();">
+        <option value="todas">Todas las categorías</option>
+        <option value="LIMONADA">LIMONADA</option>
+        <option value="GASEOSAS Y AGUAS">GASEOSAS Y AGUAS</option>
+        <option value="JUGOS">JUGOS</option>
+        <option value="ENERGIZANTES">ENERGIZANTES</option>
+        <option value="CAFETERIA">CAFETERIA</option>
+        <option value="COCTELERIA">COCTELERIA</option>
+        <option value="CERVEZAS">CERVEZAS</option>
+        <option value="MEDIDAS">MEDIDAS</option>
+        <option value="VINOS LA VERBENA">VINOS LA VERBENA</option>
+        <option value="VINOS CONCEPTO">VINOS CONCEPTO</option>
+        <option value="VINOS TRADICIONALES">VINOS TRADICIONALES</option>
+      </select>
+      <div id="productos-container1"></div>
     </div>
 
     <div id="content" style="display: none">

@@ -18,6 +18,11 @@ function mostrarFiltroSelector() {
   filtroSelector.style.display = "block";
 }
 
+function mostrarFiltroSelector1() {
+  var filtroSelector = document.getElementById("filtro-selector1");
+  filtroSelector.style.display = "block";
+}
+
 // Función para cargar y mostrar el filtro selector
 function mostrarOpciones(tipo) {
   document.getElementById("opcionesBotones").style.display = "none";
@@ -26,6 +31,8 @@ function mostrarOpciones(tipo) {
 
   if (tipo === "haceTuOrden") {
     cargarScript("./js/haceTuOrden.js", mostrarFiltroSelector);
+  } else if (tipo === "haceTuOrdenBebida") {
+    cargarScript("./js/haceTuOrdenBebida.js", mostrarFiltroSelector1);
   } else if (tipo === "llamarAlMozo") {
     cargarScript("./js/llamarAlMozo.js");
   } else if (tipo === "pedirLaCuenta") {
