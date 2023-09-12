@@ -10,6 +10,17 @@ const firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+// Crear el título h1
+var tituloH1 = document.createElement("h1");
+tituloH1.textContent = "MENÚ DE SABORES";
+tituloH1.classList.add("mi-clase-h1");
+
+// Obtener el cuerpo del documento (body)
+var body = document.body;
+
+// Agregar los títulos al inicio del cuerpo
+body.insertBefore(tituloH1, body.firstChild);
+
 // Crear el botón "Home"
 var homeButton = document.createElement("div");
 homeButton.textContent = "REGRESAR 🏡";
@@ -47,28 +58,160 @@ const productosJSON = `
   "Menu": [
     {
       "categoria": "PICOTEO PREVIO",
+      "genero": "PAPAS",
       "nombre": "PAPAS HUMO",
       "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
       "precio": 1000,
       "imagen": ""
     },
     {
-      "categoria": "SANDWICHES",
-      "nombre": "MONTECRISTO",
+      "categoria": "PICOTEO PREVIO",
+      "genero": "PAPAS",
+      "nombre": "PAPAS ALFREDO",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 2000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PICOTEO PREVIO",
+      "genero": "BRUSQUETAS",
+      "nombre": "OMNIVORAS",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 2000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PICOTEO PREVIO",
+      "genero": "BRUSQUETAS",
+      "nombre": "PASTOLOVER",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PICOTEO PREVIO",
+      "genero": "BRUSQUETAS",
+      "nombre": "DEGUSTACIÓN SERRANA",
       "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
       "precio": 1000,
       "imagen": ""
     },
     {
       "categoria": "ENTRADAS",
+      "genero": "ENTRADAS",
+      "nombre": "TAQUITOS DE COSTILLA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENTRADAS",
+      "genero": "ENTRADAS",
       "nombre": "EMPANADAS",
       "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
       "precio": 1000,
       "imagen": ""
     },
     {
+      "categoria": "ENTRADAS",
+      "genero": "ENTRADAS",
+      "nombre": "MIX DE EMBUTIDOS Y ACHURAS",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENTRADAS",
+      "genero": "ENTRADAS",
+      "nombre": "PROVOLETAS",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENSALADAS",
+      "genero": "ENSALADAS",
+      "nombre": "DEL VALLE",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENSALADAS",
+      "genero": "ENSALADAS",
+      "nombre": "KUSAMA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENSALADAS",
+      "genero": "ENSALADAS",
+      "nombre": "CAPRICHO",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "ENSALADAS",
+      "genero": "ENSALADAS",
+      "nombre": "MIXTA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
       "categoria": "GUARNICIONES",
-      "nombre": "ENSALADA",
+      "genero": "GUARNICIONES",
+      "nombre": "PAPAS FRITAS",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "GUARNICIONES",
+      "genero": "GUARNICIONES",
+      "nombre": "MIX DE VERDURAS AL RESCOLDO",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PRINCIPALES",
+      "genero": "PRINCIPALES",
+      "nombre": "OJO DE BIFE A LA PARRILLA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PRINCIPALES",
+      "genero": "PRINCIPALES",
+      "nombre": "BIFE DE CHORIZO",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PRINCIPALES",
+      "genero": "PRINCIPALES",
+      "nombre": "COSTILLA BANDERITA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PRINCIPALES",
+      "genero": "PRINCIPALES",
+      "nombre": "T BONE A LA PARRILLA",
+      "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
+      "precio": 1000,
+      "imagen": ""
+    },
+    {
+      "categoria": "PRINCIPALES",
+      "genero": "PRINCIPALES",
+      "nombre": "TOMAWAWK",
       "descripcion": "Trago largo italiano que mezcla Aperol, prosecco y soda.",
       "precio": 1000,
       "imagen": ""
@@ -90,7 +233,7 @@ function construirContenidoProductos() {
       >
         <div class="entrada-info">
           <div class="columna">
-            <div class="entrada-label colorSlogan">${producto.categoria}</div>
+            <div class="entrada-label colorSlogan">${producto.genero}</div>
             <div class="entrada-label">${producto.nombre}</div>
             <div class="entrada-label formatoDescripcion">${
               producto.descripcion
@@ -162,21 +305,28 @@ function construirContenidoProductos() {
 
 function filterTable() {
   var category = document.getElementById("category-select").value;
-  var productosContainer = document.getElementById(
-    "productos-container"
-  );
+  var productosContainer = document.getElementById("productos-container");
   var productosDivs = productosContainer.querySelectorAll(".opcion");
 
-  productosDivs.forEach(function (productoDiv) {
+  productosDivs.forEach(function (productoDiv, index) {
     var categoriaProducto = productoDiv.getAttribute("data-categoria");
 
     if (category === "todas" || category === categoriaProducto) {
-      productoDiv.style.display = "block";
+      // Establecer el estilo para mostrar los elementos en línea
+      productoDiv.style.display = "inline-block";
+      
+      // Agregar un salto de línea cada dos elementos
+      if (index % 2 === 1) {
+        productoDiv.style.clear = "both";
+      } else {
+        productoDiv.style.clear = "none";
+      }
     } else {
       productoDiv.style.display = "none";
     }
   });
 }
+
 
 const productosContainer = document.getElementById(
   "productos-container"

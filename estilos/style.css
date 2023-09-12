@@ -63,7 +63,7 @@ h1::after {
 .mi-clase-h1 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
 }
 
 h2 {
@@ -113,8 +113,9 @@ h3.todosOFiltra {
   font-style: italic;
 }
 
+/* Estilo para cada opción */
 .opcion {
-  width: 49%; /* Ancho del recuadro, puedes ajustar este valor */
+  width: 46%; /* Ancho del recuadro, 50% para dos por línea */
   display: inline-block; /* Mostrar los recuadros en línea */
   vertical-align: top; /* Alinear los recuadros en la parte superior */
   margin-left: auto;
@@ -125,11 +126,13 @@ h3.todosOFiltra {
   padding: 1rem;
   border-radius: 0.3125rem;
   margin-top: 1rem;
+  margin: 1rem;
 }
 
+
+/* Estilo para el contenedor de opciones */
 .opciones-categoria {
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center; /* Alinea las opciones en el centro */
 }
 
 .imagen {
@@ -216,8 +219,8 @@ h3.todosOFiltra {
 }
 
 .colorSlogan {
-  color: rgb(250, 171, 2);
-  font-size: 2rem;
+  color: #cd8241;
+  font-size: 2.8rem;
 }
 
 .formatoDescripcion {
