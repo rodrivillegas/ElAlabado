@@ -342,7 +342,7 @@ const productosJSON = `
       "nombre": "CHURRASQUITO INFANTIL",
       "descripcion": "Ojo de bife angosto acompañado de papas fritas.",
       "precio": 2900,
-      "imagen": ""
+      "imagen": "./assets/MenuKids.jpg"
     },
     {
       "categoria": "MENU INFANTIL",
@@ -350,7 +350,7 @@ const productosJSON = `
       "nombre": "TALLARINES INFANTIL",
       "descripcion": "Con salsa crema o mixta.",
       "precio": 2900,
-      "imagen": ""
+      "imagen": "./assets/MenuKids.jpg"
     },
     {
       "categoria": "MENU INFANTIL",
@@ -358,7 +358,7 @@ const productosJSON = `
       "nombre": "SORRENTINOS INFANTIL",
       "descripcion": "Rellenos de jamón y queso.",
       "precio": 2900,
-      "imagen": ""
+      "imagen": "./assets/MenuKids.jpg"
     },
     {
       "categoria": "POSTRES",
