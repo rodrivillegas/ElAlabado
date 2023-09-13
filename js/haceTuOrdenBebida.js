@@ -94,7 +94,7 @@ const productosJSON = `
       "nombre": "LIMONADA CHIC 500cc",
       "descripcion": "Limón + Pepino + Agua + Ananá.",
       "precio": 800,
-      "imagen": ""
+      "imagen": "./assets/LimonadaChic.jpg"
     },
     {
       "categoria": "LIMONADA",
@@ -102,7 +102,7 @@ const productosJSON = `
       "nombre": "LIMONADA CHIC 1L.",
       "descripcion": "Limón + Pepino + Agua + Ananá.",
       "precio": 1500,
-      "imagen": ""
+      "imagen": "./assets/LimonadaChic.jpg"
     },
     {
       "categoria": "GASEOSAS Y AGUAS",
