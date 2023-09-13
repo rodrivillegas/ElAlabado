@@ -126,7 +126,7 @@ const productosJSON = `
       "nombre": "TAQUITOS DE COSTILLA",
       "descripcion": "Carne de ternera braseada y desmenuzada + Salsa criolla + lactosa.",
       "precio": 3400,
-      "imagen": ""
+      "imagen": "./assets/Provoleta.jpg"
     },
     {
       "categoria": "ENTRADAS",
@@ -134,7 +134,7 @@ const productosJSON = `
       "nombre": "EMPANADAS",
       "descripcion": "a) Carne desmenuzada; b) Verduras; c) Queso y cebolla (elige en los comentarios).",
       "precio": 600,
-      "imagen": ""
+      "imagen": "./assets/Provoleta.jpg"
     },
     {
       "categoria": "ENTRADAS",
@@ -142,7 +142,7 @@ const productosJSON = `
       "nombre": "MIX DE EMBUTIDOS Y ACHURAS",
       "descripcion": "Chorizo + Morcilla + Chinchulines + Mollejas.",
       "precio": 3900,
-      "imagen": ""
+      "imagen": "./assets/Provoleta.jpg"
     },
     {
       "categoria": "ENTRADAS",
@@ -150,7 +150,7 @@ const productosJSON = `
       "nombre": "PROVOLETAS",
       "descripcion": "Sola, al pesto o con chimichurri (elige en los comentarios).",
       "precio": 2900,
-      "imagen": ""
+      "imagen": "./assets/Provoleta.jpg"
     },
     {
       "categoria": "ENSALADAS",
@@ -294,7 +294,7 @@ const productosJSON = `
       "nombre": "SORRENTINOS",
       "descripcion": "a) Jamón + Queso + Pimientos asados; b) Hongos + Coliflor asado + Queso (elige en los comentarios).",
       "precio": 3500,
-      "imagen": ""
+      "imagen": "./assets/Sorrentinos.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -302,7 +302,7 @@ const productosJSON = `
       "nombre": "RAVIOLES",
       "descripcion": "a) Calabaza + Queso + Maní tostado; b) Carne + Verduras al disco (elige en los comentarios).",
       "precio": 3500,
-      "imagen": ""
+      "imagen": "./assets/Sorrentinos.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -310,7 +310,7 @@ const productosJSON = `
       "nombre": "TALLARINES",
       "descripcion": "",
       "precio": 3200,
-      "imagen": ""
+      "imagen": "./assets/Sorrentinos.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -318,7 +318,7 @@ const productosJSON = `
       "nombre": "LASAGNA DE OSOBUCO BRASEADO",
       "descripcion": "Consultar disponibilidad.",
       "precio": 4200,
-      "imagen": ""
+      "imagen": "./assets/Sorrentinos.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -326,7 +326,7 @@ const productosJSON = `
       "nombre": "LASAGNA DE VERDURAS",
       "descripcion": "Consultar disponibilidad.",
       "precio": 3900,
-      "imagen": ""
+      "imagen": "./assets/Sorrentinos.jpg"
     },
     {
       "categoria": "PASTAS Y SALSAS",
@@ -334,7 +334,7 @@ const productosJSON = `
       "nombre": "SALSA:",
       "descripcion": "a) Roja: Salsa de tomate + Albahaca; b) Mixta: Salsa roja + Crema; c) Champiñones: Champiñones + Vino blanco + Crema (elige en los comentarios)",
       "precio": 0,
-      "imagen": ""
+      "imagen": "./assets/Salsas.jpg"
     },
     {
       "categoria": "MENU INFANTIL",
@@ -414,7 +414,7 @@ const productosJSON = `
       "nombre": "M. CLASICA",
       "descripcion": "Café con leche o infusión + 2 tostadas de pan de campo + mermelada de fruta de estación + Queso crema + Dulce de leche + Jugo de naranja.",
       "precio": 1800,
-      "imagen": ""
+      "imagen": "./assets/CafeConLeche.jpg"
     },
     {
       "categoria": "MERIENDAS",
@@ -422,7 +422,7 @@ const productosJSON = `
       "nombre": "M. ENERGETICA",
       "descripcion": "Café con leche o infusión + 2 tostadas de pan de campo + mermelada de fruta de estación + Queso crema + Dulce de leche + Jugo de naranja (elige en los comentarios)",
       "precio": 2000,
-      "imagen": ""
+      "imagen": "./assets/CafeConLeche.jpg"
     },
     {
       "categoria": "MERIENDAS",
@@ -430,7 +430,7 @@ const productosJSON = `
       "nombre": "M. GOLOSA",
       "descripcion": "Café con leche o infusión + Panqueque + Dulce de leche + Rodajas de frutas de estación + Miel + Nueces picadas + Canela (elige en los comentarios).",
       "precio": 2300,
-      "imagen": ""
+      "imagen": "./assets/CafeConLeche.jpg"
     },
     {
       "categoria": "MERIENDAS",
@@ -438,7 +438,7 @@ const productosJSON = `
       "nombre": "M. 5to PECADO",
       "descripcion": "Café con leche o infusión + Sandwich de pan de campo + Manteca + Jamon + Queso + Tomate + Huevo revuelto + Jugo de naranja (elige en los comentarios).",
       "precio": 2300,
-      "imagen": ""
+      "imagen": "./assets/CafeConLeche.jpg"
     }
   ]
 }
